@@ -1,0 +1,160 @@
+@import url(../../../navigation.css);
+
+* {
+  box-sizing: border-box;
+}
+a {
+  all: unset;
+}
+body {
+  margin: 0;
+  font-family: "Figtree", sans-serif;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+  inset: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.image-wrapper {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  background: #03b4ff;
+  background: linear-gradient(180deg, #03b4ff, #d6f3ff);
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  width: 100%;
+  padding: 30px;
+}
+
+.image-wrapper .logo {
+  height: 300px;
+}
+
+.main-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-input {
+  border-radius: 5px;
+  font-family: "Figtree", sans-serif;
+  height: 40px;
+  border: 1px solid grey;
+  width: 100%;
+  padding-left: 10px;
+  background-color: #fff;
+}
+
+.form-input:focus {
+  background-color: #f7f9fa;
+  border: 2px solid #00b3ff;
+  outline: none;
+}
+
+.action-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.submit-button {
+  all: unset;
+  background-color: #00b3ff;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+  flex: 1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-button {
+  all: unset;
+  background-color: #2d2f31;
+  color: white;
+  padding: 6px;
+  flex: 1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+@media (max-width: 576px) {
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .image-wrapper {
+    display: flex;
+  }
+  .signup-container {
+    flex-direction: row;
+    background-color: transparent;
+  }
+  .image-wrapper {
+    height: 100%;
+    flex: 1;
+  }
+
+  .form-wrapper {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+}

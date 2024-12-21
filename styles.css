@@ -1,0 +1,105 @@
+@import url(../../../navigation.css);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Figtree", sans-serif;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+a {
+  all: unset;
+}
+
+.top-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 20px;
+  border-bottom: 1px solid #2d2f3153;
+  column-gap: 20px;
+}
+.site-image {
+  height: 40px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container {
+  background-image: url("assets/images/landing.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 10%;
+  height: 80%;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-radius: 50px;
+}
+
+.text-button-container {
+  background-color: #2d2f31c9;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  border-radius: 50px;
+}
+
+.button-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.button-wrapper a {
+  padding: 10px 30px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.action-button:hover {
+  cursor: pointer;
+}
+
+.login-bottom {
+  background-color: #00b3ff;
+  border-radius: 5px;
+}
+
+.signup-bottom {
+  background-color: #484a4b;
+  border-radius: 5px;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signup as an Instructor</title>
+    <title>Login as an Instructor</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,9 +39,9 @@
 
         <div class="nav-auth">
           <ul class="auth-navigation">
-            <li class="login"><a href="../login/index.html">Login</a></li>
+            <li class="login"><a href="./index.html">Login</a></li>
             <li class="signup">
-              <a href="./views/auth/signup/index.html">Signup</a>
+              <a href="../signup/index.html">Signup</a>
             </li>
           </ul>
         </div>
@@ -52,34 +52,20 @@
         <div class="signup-container">
           <div class="image-wrapper">
             <img
-              src="../../../assets/images/study.png"
+              src="../../../assets/images/edit.png"
               alt="Girl studying"
               class="logo"
             />
           </div>
           <div class="form-wrapper">
-            <h1>Signup and start teaching</h1>
+            <h1>Login and manage your courses</h1>
             <form action="#" method="post" class="main-form">
               <input
                 type="text"
-                name="fullName"
-                id="fullName"
-                class="fullName-input form-input"
-                placeholder="Full name"
-              />
-              <input
-                type="email"
                 name="email"
                 id="email"
-                placeholder="Email"
+                placeholder="Email or username"
                 class="email-input form-input"
-              />
-              <input
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Username"
-                class="username-input form-input"
               />
               <input
                 type="password"
@@ -88,16 +74,9 @@
                 placeholder="Password"
                 class="password-input form-input"
               />
-              <input
-                type="password"
-                name="passwordRepeat"
-                id="passwordRepeat"
-                placeholder="Repeat password"
-                class="password-input form-input"
-              />
               <div class="action-buttons">
-                <input class="submit-button" type="submit" value="Signup" />
-                <button class="login-button">Login</button>
+                <input class="submit-button" type="submit" value="Login" />
+                <button class="signup-button">Signup</button>
               </div>
             </form>
           </div>
