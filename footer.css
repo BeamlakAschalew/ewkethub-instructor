@@ -22,6 +22,8 @@ footer {
   padding: 40px;
   padding-bottom: 10px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
   align-items: center;
   justify-content: space-between;
 }
@@ -31,6 +33,7 @@ footer {
   list-style-type: none;
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .links li {
@@ -50,10 +53,15 @@ hr {
   padding: 40px;
   padding-top: 10px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
   align-items: center;
   justify-content: space-between;
 }
 
+ul {
+  padding: 0;
+}
 .social-links {
   display: flex;
   gap: 10px;

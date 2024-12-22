@@ -104,3 +104,8 @@ main {
   background-color: #484a4b;
   border-radius: 5px;
 }
+@media (max-width: 576px) {
+  .wrapper {
+    margin-top: 50px;
+  }
+}
