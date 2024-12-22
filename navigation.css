@@ -207,7 +207,7 @@ body {
   }
 }
 
-@media (min-width: 577px) and (max-width: 960px) {
+@media (min-width: 576px) and (max-width: 960px) {
   .logo-img {
     background-image: url("../../assets/images/logos/logo-sd.png");
     width: 45px;
