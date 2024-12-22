@@ -17,6 +17,7 @@ body {
   padding: 5px 20px;
   box-shadow: 0 8px 6px -6px #dcdedf;
   column-gap: 20px;
+  margin-bottom: 30px;
 }
 
 .menu-wrapper {

@@ -42,7 +42,7 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  padding: 10px;
+  padding: 10px 25px;
 }
 .course {
   border: 1px solid #484a4b66;
