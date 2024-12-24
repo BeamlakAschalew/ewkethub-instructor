@@ -116,6 +116,10 @@ body {
   flex: 2 0 0;
 }
 
+.auth-navigation {
+  padding-left: 40px;
+}
+
 .auth-navigation .login {
   border: 1px solid #3e4143;
   padding: 6px;

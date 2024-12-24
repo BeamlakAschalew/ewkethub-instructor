@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Details</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar-container">
+      <div class="menu-wrapper">
+        <div class="menu">
+          <i class="bi menu-icon bi-list"></i>
+        </div>
+        <div class="logo">
+          <a href="/"><div class="logo-img"></div></a>
+        </div>
+      </div>
+
+      <div class="main-navigation">
+        <div class="nav-items">
+          <ul class="site-navigation">
+            <li class="selected">Home</li>
+            <li>My courses</li>
+            <li>Create a course</li>
+          </ul>
+        </div>
+
+        <div class="nav-auth">
+          <ul class="auth-navigation">
+            <li class="login">
+              <a href="./views/auth/login/index.html">Login</a>
+            </li>
+            <li class="signup">
+              <a href="./views/auth/signup/index.html">Signup</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="wrapper">
+      <div class="inside-wrapper">
+        <div class="course-editor">
+          <div class="course-attributes">
+            <div class="field-image">
+              <div class="field-with-text">
+                <h2 class="top-text">
+                  Edit course: The Complete 2024 Web Development Bootcamp
+                </h2>
+                <div class="fields">
+                  <div class="field-title first-entry">Course thumbnail</div>
+                  <img
+                    src="../../assets/images/c5.webp"
+                    class="course-image second-entry"
+                    alt=""
+                    srcset=""
+                  />
+                  <div class="field-title first-entry">Course title</div>
+                  <input
+                    type="text"
+                    class="form-input second-entry"
+                    name=""
+                    id=""
+                  />
+                  <div class="field-title first-entry">Course slang</div>
+                  <input
+                    type="text"
+                    class="form-input second-entry"
+                    name=""
+                    id=""
+                  />
+                  <div class="field-title first-entry">Course description</div>
+                  <textarea
+                    class="form-input second-entry"
+                    name=""
+                    id=""
+                  ></textarea>
+                  <div class="field-title first-entry">Course category</div>
+                  <select
+                    class="form-input second-entry"
+                    name="category"
+                    id="dropdown-menu"
+                  >
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                  </select>
+                  <div class="field-title first-entry">Course difficulty</div>
+                  <select
+                    class="form-input second-entry"
+                    name="difficulty"
+                    id="dropdown-menu"
+                  >
+                    <option value="option1">Beginner</option>
+                    <option value="option2">Intermediate</option>
+                    <option value="option3">Advanced</option>
+                  </select>
+                </div>
+                <div class="action-buttons">
+                  <input
+                    class="submit-button button"
+                    type="submit"
+                    value="Update"
+                  />
+                  <a href="" class="cancel-button button">Cancel</a>
+                </div>
+              </div>
+              <aside>
+                <img
+                  src="../../assets/images/speaking-2.jpeg"
+                  alt=""
+                  srcset=""
+                />
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">
+      <div class="footer-top">
+        <div class="logo-large">
+          <img
+            class="footer-logo"
+            src="../../assets/images/logos/logo-row.png"
+            alt=""
+          />
+        </div>
+
+        <div class="site-links">
+          <ul class="links">
+            <li class="link-item">Home</li>
+            <li class="link-item">Become a creator</li>
+            <li class="link-item">About us</li>
+            <li class="link-item">Contact</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="about-footer">
+        <h3>&copy; EwketHub 2024</h3>
+        <ul class="social-links">
+          <li class="social-link"><i class="bi bi-twitter"></i></li>
+          <li class="social-link"><i class="bi bi-instagram"></i></li>
+          <li class="social-link"><i class="bi bi-telegram"></i></li>
+          <li class="social-link"><i class="bi bi-tiktok"></i></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
