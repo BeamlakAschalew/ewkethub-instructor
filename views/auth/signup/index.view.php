@@ -3,8 +3,8 @@
 
 <head>
   <?php require base_path('views/partials/head.php') ?>
-  <link rel="stylesheet" href="<?= base_url('views/auth/login/styles.css') ?>" />
-  <title>Login as an Instructor</title>
+  <title>Signup as an Instructor</title>
+  <link rel="stylesheet" href="<?= base_url('views/auth/signup/styles.css') ?>" />
 </head>
 
 <body>
@@ -14,28 +14,46 @@
       <div class="signup-container">
         <div class="image-wrapper">
           <img
-            src="../../../assets/images/edit.png"
+            src="../../../assets/images/study.png"
             alt="Girl studying"
             class="logo" />
         </div>
         <div class="form-wrapper">
-          <h1>Login and manage your courses</h1>
+          <h1>Signup and start teaching</h1>
           <form action="#" method="post" class="main-form">
             <input
               type="text"
+              name="fullName"
+              id="fullName"
+              class="fullName-input form-input"
+              placeholder="Full name" />
+            <input
+              type="email"
               name="email"
               id="email"
-              placeholder="Email or username"
+              placeholder="Email"
               class="email-input form-input" />
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+              class="username-input form-input" />
             <input
               type="password"
               name="password"
               id="password"
               placeholder="Password"
               class="password-input form-input" />
+            <input
+              type="password"
+              name="passwordRepeat"
+              id="passwordRepeat"
+              placeholder="Repeat password"
+              class="password-input form-input" />
             <div class="action-buttons">
-              <a class="submit-button" href="/home">Login</a>
-              <button class="signup-button">Signup</button>
+              <input class="submit-button" type="submit" value="Signup" />
+              <button class="login-button">Login</button>
             </div>
           </form>
         </div>

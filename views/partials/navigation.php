@@ -13,8 +13,8 @@
     <div class="main-navigation">
         <div class="nav-items">
             <ul class="site-navigation">
-                <li class="selected">Home</li>
-                <li>My courses</li>
+                <li class="selected"><a href="/home">Home</a></li>
+                <li><a href="/home">My courses</a></li>
                 <li>Create a course</li>
             </ul>
         </div>
@@ -22,10 +22,10 @@
         <div class="nav-auth">
             <ul class="auth-navigation">
                 <li class="login">
-                    <a href="./views/auth/login/index.html">Login</a>
+                    <a href="/login">Login</a>
                 </li>
                 <li class="signup">
-                    <a href="./views/auth/signup/index.html">Signup</a>
+                    <a href="/signup">Signup</a>
                 </li>
             </ul>
         </div>

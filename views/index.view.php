@@ -21,10 +21,10 @@
           </div>
           <div class="button-wrapper">
             <div class="login-bottom action-button">
-              <a href="./views/auth/login/index.html">Login</a>
+              <a href="/login">Login</a>
             </div>
             <div class="signup-bottom action-button">
-              <a href="./views/auth/signup/index.html">Signup</a>
+              <a href="/signup">Signup</a>
             </div>
           </div>
         </div>
