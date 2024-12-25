@@ -43,7 +43,7 @@
     </div>
   </main>
   <?php require base_path('views/partials/footer.php') ?>
-  <script src="../../../navigation.js"></script>
+  <script src="<?= base_url('views/script.js') ?>"></script>
 </body>
 
 </html>
