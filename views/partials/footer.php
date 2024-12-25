@@ -3,7 +3,7 @@
         <div class="logo-large">
             <img
                 class="footer-logo"
-                src="./assets/images/logos/logo-row.png"
+                src="<?= base_url('assets/images/logos/logo-row.png') ?>"
                 alt="" />
         </div>
 
