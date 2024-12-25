@@ -19,8 +19,11 @@
     <h3>Your courses:</h3>
     <div class="courses-list">
 
-      <?php for ($i = 0; $i < 30; $i++) {
-        require base_path('views/partials/course_card.php');
+      <?php foreach ($courses as $course) {
+
+        $title = $course['title'];
+        $description = $course['description'];
+        include base_path('views/partials/course_card.php');
       } ?>
 
     </div>

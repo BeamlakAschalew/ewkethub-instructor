@@ -8,7 +8,7 @@
         </div>
         <div class="course-text">
             <div class="course-title">
-                The Complete 2024 Web Development Bootcamp
+                <?= htmlspecialchars($title) ?>
             </div>
 
             <div class="course-author">Dr. Angela Yu</div>
