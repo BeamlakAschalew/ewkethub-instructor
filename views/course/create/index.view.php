@@ -71,7 +71,7 @@
                                 <input
                                     class="submit-button button"
                                     type="submit"
-                                    value="Update" />
+                                    value="Create" />
                                 <a href="" class="cancel-button button">Cancel</a>
                             </div>
                         </div>

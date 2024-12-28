@@ -49,6 +49,14 @@ h3 {
   border-radius: 5px;
   width: 100%;
   max-width: 350px;
+  transition: 0.3s;
+}
+
+.course:hover {
+  box-shadow: 0px 0px 10px 0px #484a4b66;
+  max-width: 360px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .course-image {

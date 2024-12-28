@@ -15,7 +15,7 @@
             <ul class="site-navigation">
                 <li class="selected"><a href="/home">Home</a></li>
                 <li><a href="/home">My courses</a></li>
-                <li>Create a course</li>
+                <li><a href="/course/create">Create a course</a></li>
             </ul>
         </div>
 
