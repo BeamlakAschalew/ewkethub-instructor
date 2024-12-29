@@ -1,0 +1,50 @@
+@import url(../../navigation.css);
+@import url(../../footer.css);
+
+a {
+  all: unset;
+}
+
+.plyr {
+  font-family: "Figtree", sans-serif;
+}
+
+.top-text {
+  padding: 10px 30px;
+  margin-top: 10px;
+  background-color: #f7f9fa;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.lesson-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.side-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .side-image {
+    display: none;
+  }
+}
