@@ -1,0 +1,79 @@
+@import url(../../navigation.css);
+@import url(../../footer.css);
+
+body {
+  height: 100vh;
+  font-family: "Figtree", sans-serif;
+}
+
+a {
+  all: unset;
+}
+
+.top-text {
+  padding: 10px 30px;
+  margin-top: 10px;
+  background-color: #f7f9fa;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.lesson-container {
+  padding: 30px;
+  padding-top: 0;
+}
+
+.lessons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.lesson {
+  padding: 20px;
+  border: 1px solid #f7f9fa;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #00b3ff;
+  color: white;
+  font-weight: bold;
+}
+
+.section-info {
+  padding: 30px;
+}
+
+.intro-text,
+.intro-text h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.create-button {
+  background-color: #00b3ff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+div.span-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.span-title {
+  display: flex;
+}
+
+.span-value {
+  display: flex;
+}

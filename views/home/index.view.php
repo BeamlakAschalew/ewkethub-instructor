@@ -23,7 +23,7 @@
 
         $title = $course['title'];
         $description = $course['description'];
-        include base_path('views/partials/course_card.php');
+        include base_path('views/partials/course/course_card.php');
       } ?>
 
     </div>

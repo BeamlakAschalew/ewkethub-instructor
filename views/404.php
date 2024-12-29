@@ -12,7 +12,7 @@
     <main>
         <div class="wrapper">
             <div class="inside-wrapper">
-                <img src="../assets/images/404.png" class="image" alt="" srcset="">
+                <img src="<?= base_url('assets/images/404.png') ?>" class="image" alt="" srcset="">
                 <h1>404</h1>
                 <h2>Page not found</h2>
                 <p>Sorry, the page you are looking for could not be found.</p>

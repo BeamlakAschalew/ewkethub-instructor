@@ -12,7 +12,7 @@
     <main>
         <div class="wrapper">
             <div class="inside-wrapper">
-                <img src="../assets/images/500.png" class="image" alt="" srcset="">
+                <img src="<?= base_url('assets/images/500.png') ?>" class="image" alt="" srcset="">
                 <h1>500</h1>
                 <h2>Internal server error</h2>
                 <p>Sorry, we messed up big time.</p>

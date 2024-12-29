@@ -1,4 +1,4 @@
-<a href="/course/edit">
+<a href="/course/detail">
     <div class="course">
         <div class="course-image-container">
             <img

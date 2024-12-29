@@ -52,9 +52,21 @@ class Router {
 
     public function route($uri, $method) {
         foreach ($this->routes as $route) {
-            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+            $pattern = preg_replace('/\{[^\}]+\}/', '([^/]+)', $route['uri']);
+
+            if (preg_match("#^$pattern$#", $uri, $matches) && $route['method'] === strtoupper($method)) {
+                array_shift($matches);
                 Middleware::resolve($route['middleware']);
 
+                if (preg_match_all('/\{([^\}]+)\}/', $route['uri'], $paramNames)) {
+                    foreach ($paramNames[1] as $index => $name) {
+                        if ($method === 'GET') {
+                            $_GET[$name] = $matches[$index];
+                        } elseif ($method === 'POST') {
+                            $_POST[$name] = $matches[$index];
+                        }
+                    }
+                }
                 return require base_path('http/controllers/' . $route['controller']);
             }
         }
