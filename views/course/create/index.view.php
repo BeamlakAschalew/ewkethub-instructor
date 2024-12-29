@@ -77,7 +77,7 @@
                         </div>
                         <aside>
                             <img
-                                src="../../assets/images/speaking-2.jpeg"
+                                src="<?= base_url('assets/images/content-creating.png') ?>"
                                 alt=""
                                 srcset="" />
                         </aside>

@@ -33,6 +33,7 @@
         </div>
     </main>
     <?php require(base_path('views/partials/footer.php')) ?>
+    <script src="<?= base_url('views/script.js') ?>"></script>
     <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
     <script>
         const player = new Plyr('.plyr');

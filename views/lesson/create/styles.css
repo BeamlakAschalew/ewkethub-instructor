@@ -1,0 +1,197 @@
+@import url(../../../navigation.css);
+@import url(../../../footer.css);
+
+a {
+  all: unset;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding-top: 10px;
+}
+
+.inside-wrapper {
+  padding-top: 10px;
+}
+
+.fields {
+  padding: 0 30px;
+}
+
+.top-text {
+  padding: 10px 30px;
+  margin-top: 10px;
+  background-color: #f7f9fa;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.field-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lesson-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lesson-editor {
+  display: flex;
+  justify-content: space-around;
+}
+
+.lesson-attributes {
+  flex: 3;
+}
+
+aside {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+aside img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.form-input {
+  border-radius: 5px;
+  font-family: "Figtree", sans-serif;
+  height: 40px;
+  border: 1px solid grey;
+  width: 100%;
+  padding-left: 10px;
+  background-color: #fff;
+}
+
+.form-input:focus {
+  background-color: #f7f9fa;
+  border: 2px solid #00b3ff;
+  outline: none;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.field-image {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.submit-button {
+  all: unset;
+  background-color: #00b3ff;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cancel-button {
+  all: unset;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.action-buttons {
+  margin-top: 30px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+}
+
+.button {
+  padding: 5px 35px;
+}
+
+.custom-file-upload {
+  position: relative;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.upload-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.upload-text {
+  margin-top: 10px;
+  color: #555;
+}
+
+.video-preview {
+  margin-top: 20px;
+}
+
+#video-preview {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.plyr {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (max-width: 576px) {
+  .inside-wrapper {
+    padding-top: 50px;
+  }
+
+  .top-text {
+    margin-top: 50px;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .field-image {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    display: none;
+  }
+}

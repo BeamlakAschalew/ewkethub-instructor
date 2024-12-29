@@ -14,8 +14,8 @@
       <div class="signup-container">
         <div class="image-wrapper">
           <img
-            src="../../../assets/images/edit.png"
-            alt="Girl studying"
+            src="<?= base_url('assets/images/login.png') ?>"
+            alt="Boy using laptop"
             class="logo" />
         </div>
         <div class="form-wrapper">

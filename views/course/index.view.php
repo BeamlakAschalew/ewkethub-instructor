@@ -39,12 +39,12 @@
                                 <h2>5000</h2>
                             </div>
                             <div class="action-buttons">
-                                <a href="/course/edit" class="submit-button button">Edit</a>
+                                <a href="/course/course-slang/edit" class="submit-button button">Edit</a>
                             </div>
                         </div>
                         <aside>
                             <img
-                                src="../../assets/images/speaking-2.jpeg"
+                                src="<?= base_url('assets/images/content-creating.png') ?>"
                                 alt=""
                                 srcset="" />
                         </aside>

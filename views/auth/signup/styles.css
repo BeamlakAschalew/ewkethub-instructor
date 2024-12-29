@@ -50,8 +50,6 @@ main {
   justify-content: center;
   height: 100px;
   width: 100%;
-  background: #03b4ff;
-  background: linear-gradient(180deg, #03b4ff, #d6f3ff);
 }
 
 .form-wrapper {
