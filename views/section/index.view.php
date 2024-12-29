@@ -14,7 +14,7 @@
             <div class="intro-text">
                 <h2>Section title</h2>
             </div>
-            <a class="create-button" href="#"><i class="bi bi-plus-circle"></i> Create a lesson</a>
+            <a class="create-button" href="/course/course-slang/section/section-slang/lesson/create"><i class="bi bi-plus-circle"></i> Create a lesson</a>
         </div>
         <div class="section-info">
             <h2>Section info</h2>

@@ -48,12 +48,12 @@ h3 {
   border-radius: 5px;
   width: 100%;
   max-width: 350px;
-  border: 1px solid #484a4b66;
+  border: 2px solid #484a4b37;
   transition: 0.3s;
 }
 
 .course:hover {
-  border: 4px solid #00b3ff;
+  border: 2px solid #00b3ff;
   transition: 0.3s;
   cursor: pointer;
 }

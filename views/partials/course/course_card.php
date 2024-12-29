@@ -1,4 +1,4 @@
-<a href="/course/course-slang/detail">
+<a href="/course/course-slang">
     <div class="course">
         <div class="course-image-container">
             <img
