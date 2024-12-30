@@ -39,6 +39,12 @@ a {
   object-fit: cover;
 }
 
+@media (max-width: 577px) {
+  .inside-wrapper {
+    padding-top: 90px;
+  }
+}
+
 @media (max-width: 1200px) {
   .main-wrapper {
     grid-template-columns: 1fr;

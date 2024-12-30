@@ -77,3 +77,9 @@ div.span-container {
 .span-value {
   display: flex;
 }
+
+@media (max-width: 577px) {
+  main {
+    padding-top: 90px;
+  }
+}

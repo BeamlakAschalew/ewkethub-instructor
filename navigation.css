@@ -147,14 +147,14 @@ body {
   transition: 0.4s;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 577px) {
   .search-bar,
   .main-navigation {
     display: flex;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 577px) {
   .menu {
     display: contents;
   }
@@ -212,7 +212,7 @@ body {
   }
 }
 
-@media (min-width: 576px) and (max-width: 960px) {
+@media (min-width: 577px) and (max-width: 960px) {
   .logo-img {
     background-image: url("../../assets/images/logos/logo-sd.png");
     width: 45px;

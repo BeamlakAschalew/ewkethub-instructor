@@ -36,6 +36,7 @@
             </div>
         </div>
     </main>
+    <script src="<?= base_url('views/script.js') ?>"></script>
     <?php require(base_path('views/partials/footer.php')) ?>
 </body>
 

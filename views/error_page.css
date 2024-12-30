@@ -63,3 +63,9 @@ p {
   background-color: #00a1e6;
   cursor: pointer;
 }
+
+@media (max-width: 577px) {
+  .inside-wrapper {
+    padding-top: 90px;
+  }
+}
