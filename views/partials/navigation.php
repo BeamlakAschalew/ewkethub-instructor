@@ -21,12 +21,24 @@
 
         <div class="nav-auth">
             <ul class="auth-navigation">
-                <li class="login">
-                    <a href="/login">Login</a>
-                </li>
-                <li class="signup">
-                    <a href="/signup">Signup</a>
-                </li>
+                <img src="<?= base_url() ?>public/uploads/images/profile_images/<?= $_SESSION['instructor']['profilePath'] ?>" class="profile-image" alt="Profile Image" />
+                <img src="" alt="" srcset="">
+                <a href=""><?= $_SESSION['instructor']['username'] ?></a>
+                <?php if (isset($_SESSION)): ?>
+                    <form method="POST" action="/session">
+                        <input type="hidden" name="_method" value="DELETE" />
+
+                        <button class="text-white">Log Out</button>
+                    </form>
+                <?php else: ?>
+                    <li class="login">
+                        <a href="/login">Login</a>
+                    </li>
+                    <li class="signup">
+                        <a href="/signup">Signup</a>
+                    </li>
+                <?php endif ?>
+
             </ul>
         </div>
     </div>

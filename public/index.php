@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . 'Core/functions.php';
@@ -7,11 +11,14 @@ require BASE_PATH . 'Core/Router.php';
 
 session_start();
 
-if (!isset($_SESSION['user'])) {
-    if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
-        $_SESSION['user']['user_email'] = $_COOKIE['user']['user_email'];
-        $_SESSION['user']['username'] = $_COOKIE['user']['username'];
-        echo "Welcome back, " . $_SESSION['user']['username'] . "!";
+if (!isset($_SESSION['instructor'])) {
+    if (isset($_COOKIE['instructor'])) {
+        $userFromCookie = json_decode($_COOKIE['instructor'], true);
+        $_SESSION['instructor']['id'] = $userFromCookie['id'];
+        $_SESSION['instructor']['fullName'] = $userFromCookie['full_name'];
+        $_SESSION['instructor']['email'] = $userFromCookie['email'];
+        $_SESSION['instructor']['username'] = $userFromCookie['username'];
+        $_SESSION['instructor']['profilePath'] = $userFromCookie['profile_picture_path'];
     }
 }
 

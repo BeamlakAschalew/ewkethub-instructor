@@ -6,6 +6,7 @@ let usernameError = true;
 let passwordError = true;
 let repeatPasswordError = true;
 let emailError = true;
+let bioError = true;
 
 $(document).ready(function () {
   $("#profileImage").on("change", function (event) {
@@ -25,6 +26,7 @@ $(document).ready(function () {
   $(".password-error").hide();
   $(".repeat-password-error").hide();
   $(".email-error").hide();
+  $(".bio-error").hide();
   form.submit(function (e) {
     e.preventDefault();
     validateSubmit();
@@ -33,7 +35,8 @@ $(document).ready(function () {
       !usernameError &&
       !passwordError &&
       !repeatPasswordError &&
-      !emailError
+      !emailError &&
+      !bioError
     ) {
       form.off("submit").submit();
     }
@@ -62,6 +65,10 @@ function validateForm() {
   $("#email").on("input", function () {
     validateEmail();
   });
+
+  $("#bio").on("input", function () {
+    validateBio();
+  });
 }
 
 function validateSubmit() {
@@ -70,6 +77,7 @@ function validateSubmit() {
   validatePassword();
   validateRepeatPassword();
   validateEmail();
+  validateBio();
 }
 
 function validateName() {
@@ -78,12 +86,10 @@ function validateName() {
     $(".fullname-error").show();
     $(".fullname-error").text("Full name cannot be empty");
     fullNameError = true;
-    return true;
   } else if (fullName.length < 3 || fullName.length > 30) {
     $(".fullname-error").show();
     $(".fullname-error").text("Length of full name must be between 3 and 30");
     fullNameError = true;
-    return true;
   } else {
     $(".fullname-error").hide();
     fullNameError = false;
@@ -95,12 +101,10 @@ function validateUsername() {
     $(".username-error").show();
     $(".username-error").text("Username cannot be empty");
     usernameError = true;
-    return true;
   } else if (username.length < 5 || username.length > 20) {
     $(".username-error").show();
     $(".username-error").text("Length of username must be between 5 and 20");
     usernameError = true;
-    return true;
   } else {
     $(".username-error").hide();
     usernameError = false;
@@ -112,12 +116,10 @@ function validatePassword() {
     $(".password-error").show();
     $(".password-error").text("Password cannot be empty");
     repeatPasswordError = true;
-    return true;
   } else if (password.length < 8 || password.length > 32) {
     $(".password-error").show();
     $(".password-error").text("Length of password must be between 8 and 32");
     passwordError = true;
-    return true;
   } else {
     $(".password-error").hide();
     passwordError = false;
@@ -130,7 +132,7 @@ function validateRepeatPassword() {
     $(".repeat-password-error").show();
     $(".repeat-password-error").text("Password does not match");
     repeatPasswordError = true;
-    return true;
+    return repeatPasswordError;
   } else {
     $(".repeat-password-error").hide();
     repeatPasswordError = false;
@@ -142,9 +144,21 @@ function validateEmail() {
     $(".email-error").show();
     $(".email-error").text("Invalid email");
     emailError = true;
-    return true;
   } else {
     $(".email-error").hide();
     emailError = false;
+  }
+}
+
+function validateBio() {
+  let bio = $("#bio").val();
+  if (bio.length > 100) {
+    $(".bio-error").show();
+    $(".bio-error").text("Bio must be less than 100 characters");
+    bioError = true;
+    return true;
+  } else {
+    $(".bio-error").hide();
+    bioError = false;
   }
 }

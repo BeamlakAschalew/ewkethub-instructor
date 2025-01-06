@@ -4,8 +4,8 @@ namespace Core\Middleware;
 
 class Guest {
     public function handle() {
-        if ($_SESSION['user'] ?? false) {
-            header('location: /');
+        if ($_SESSION['instructor'] ?? false) {
+            header('location: /home');
             exit();
         }
     }

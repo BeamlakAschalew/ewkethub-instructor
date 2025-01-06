@@ -1,6 +1,6 @@
 <?php
 
-$router->get('/', 'index.php');
+$router->get('/', 'index.php')->only('guest');
 $router->get('/login', 'auth/login.php')->only('guest');
 $router->get('/signup', 'auth/signup.php')->only('guest');
 $router->post('/signup', 'auth/create.php')->only('guest');

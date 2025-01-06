@@ -20,7 +20,7 @@
         </div>
         <div class="form-wrapper">
           <h1>Signup and start teaching</h1>
-          <form action="signup" method="post" class="main-form">
+          <form action="signup" method="post" class="main-form" enctype="multipart/form-data">
             <div class="profile-image-container">
               <label for="profileImage">
                 <div class="profile-image-preview">
@@ -74,6 +74,15 @@
                 placeholder="Repeat password"
                 class="password-input form-input" />
               <div class="repeat-password-error error">Repeat password error</div>
+            </div>
+            <div class="form-error">
+              <input
+                type="text"
+                name="bio"
+                id="bio"
+                placeholder="Bio"
+                class="bio-input form-input" />
+              <div class="bio-error error">Bio error</div>
             </div>
             <div class="action-buttons">
               <input class="submit-button" type="submit" value="Signup" />

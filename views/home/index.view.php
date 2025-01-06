@@ -12,10 +12,11 @@
   <main>
     <div class="top-text">
       <div class="intro-text">
-        <h2>Welcome back Instructor name</h2>
+        <h2>Welcome back, <?= $instructor['fullName'] ?></h2>
       </div>
       <a class="create-button" href="/course/create"><i class="bi bi-plus-circle"></i> Create a course</a>
     </div>
+    <h3>Total students: 1,457</h3>
     <h3>Your courses:</h3>
     <div class="courses-list">
 
