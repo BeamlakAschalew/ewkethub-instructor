@@ -2,6 +2,9 @@
 
 namespace Core\Middleware;
 
+require_once base_path("Core/Middleware/Authenticated.php");
+require_once base_path("Core/Middleware/Guest.php");
+
 class Middleware {
     public const MAP = [
         'guest' => Guest::class,
