@@ -21,7 +21,7 @@
 
         <div class="nav-auth">
             <ul class="auth-navigation">
-                <img src="<?= base_url() ?>public/uploads/images/profile_images/<?= $_SESSION['instructor']['profilePath'] ?>" class="profile-image" alt="Profile Image" />
+                <img src="<?= base_url() ?>uploads/images/profile_images/<?= $_SESSION['instructor']['profilePath'] ?>" class="profile-image" alt="Profile Image" />
                 <img src="" alt="" srcset="">
                 <a href=""><?= $_SESSION['instructor']['username'] ?></a>
                 <?php if (isset($_SESSION)): ?>
