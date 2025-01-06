@@ -3,6 +3,7 @@
 $router->get('/', 'index.php');
 $router->get('/login', 'auth/login.php')->only('guest');
 $router->get('/signup', 'auth/signup.php')->only('guest');
+$router->post('/signup', 'auth/create.php')->only('guest');
 $router->get('/home', 'home.php')->only('auth');
 
 $router->get('/course/create', 'course/create.php')->only('auth');
