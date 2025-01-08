@@ -7,14 +7,29 @@ require_once base_path("Core/Database.php");
 
 use Core\Database;
 
+$errors = [];
 $targetDir = "uploads/images/profile_images/";
+$data = $_POST;
+$config = require base_path("essentials/config.php");
+$database = new Database($config["database"]);
+
+$instructor = $database->query("SELECT * FROM instructor WHERE email = :email OR username = :username", [
+    'email' => $_POST['email'],
+    'username' => $_POST['username'],
+]);
+
+if ($instructor) {
+    $errors['exists'] = 'Username or email is taken';
+    view('auth/signup/index.view.php', ['errors' => $errors]);
+    die();
+}
 
 if (!is_dir($targetDir)) {
     mkdir($targetDir, 0777, true);
 }
 
 $file = $_FILES['profileImage'];
-
+$fileName = "";
 if (isset($file) && $file['error'] === 0) {
     $fileName = basename($file['name']);
     $fileName = preg_replace('/[^a-zA-Z0-9._-]/', '_', $fileName);
@@ -36,10 +51,6 @@ if (isset($file) && $file['error'] === 0) {
     echo "Error uploading the file. Error code: " . $file['error'];
 }
 
-$data = $_POST;
-$config = require base_path("essentials/config.php");
-$database = new Database($config["database"]);
-
 $database->query(
     "INSERT INTO instructor (full_name, username, email, password, profile_picture_path, bio) VALUES (:full_name, :username, :email, :password, :profile_picture_path, :bio)",
     [
@@ -50,15 +61,15 @@ $database->query(
         'profile_picture_path' => $fileName,
         'bio' => $data['bio']
     ]
-);
-
-$userId = $database->connection->lastInsertId();
-
-$user = $database->query(
-    "SELECT * FROM instructor WHERE id = :id",
-    ['id' => $userId]
 )->find();
 
-setcookie("instructor", json_encode($user), time() + (432000 * 30), "/");
+$instructorId = $database->connection->lastInsertId();
+
+$instructorFind = $database->query(
+    "SELECT * FROM instructor WHERE id = :id",
+    ['id' => $instructorId]
+)->find();
+
+setcookie("instructor", json_encode($instructorFind), time() + (432000 * 30), "/");
 
 header("Location: /home");

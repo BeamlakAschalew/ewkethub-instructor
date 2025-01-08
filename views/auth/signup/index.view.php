@@ -8,7 +8,6 @@
 </head>
 
 <body>
-  <?php require base_path('views/partials/navigation.php') ?>
   <main>
     <div class="wrapper">
       <div class="signup-container">
@@ -24,7 +23,7 @@
             <div class="profile-image-container">
               <label for="profileImage">
                 <div class="profile-image-preview">
-                  <img id="profilePreview" src="placeholder.jpg" alt="Profile Preview">
+                  <img id="profilePreview" src="">
                 </div>
               </label>
               <label for="profileImage" class="profile-image-label">Upload Profile Image</label>
@@ -84,6 +83,11 @@
                 class="bio-input form-input" />
               <div class="bio-error error">Bio error</div>
             </div>
+            <?php if (isset($errors) && !empty($errors)): ?>
+              <?php foreach ($errors as $error): ?>
+                <div class="error"><?= $error ?></div><br>
+              <?php endforeach; ?>
+            <?php endif; ?>
             <div class="action-buttons">
               <input class="submit-button" type="submit" value="Signup" />
               <button class="login-button">Login</button>
@@ -93,7 +97,6 @@
       </div>
     </div>
   </main>
-  <?php require base_path('views/partials/footer.php') ?>
   <script src="<?= base_url('views/script.js') ?>"></script>
   <script src="<?= base_url('views/auth/signup/script.js') ?>"></script>
 </body>
