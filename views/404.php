@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php require(base_path('views/partials/navigation.php')) ?>
+    <?php if (isset($_SESSION['instructor'])) require(base_path('views/partials/navigation.php')) ?>
     <main>
         <div class="wrapper">
             <div class="inside-wrapper">
@@ -20,7 +20,7 @@
             </div>
         </div>
     </main>
-    <?php require(base_path('views/partials/footer.php')) ?>
+    <?php if (isset($_SESSION['instructor'])) require(base_path('views/partials/footer.php')) ?>
     <script src="<?= base_url('views/script.js') ?>"></script>
 </body>
 

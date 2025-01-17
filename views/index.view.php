@@ -10,23 +10,16 @@
 <body>
   <main>
     <div class="wrapper">
-      <div class="image-container">
-        <div class="text-button-container">
-          <div class="text-wrapper">
-            <h1 class="welcome-title">Welcome to EwketHub!</h1>
-            <p class="welcome-description">
-              The best way to earn income from your knowledge!
-            </p>
-          </div>
-          <div class="button-wrapper">
-            <div class="login-bottom action-button">
-              <a href="/login">Login</a>
-            </div>
-            <div class="signup-bottom action-button">
-              <a href="/signup">Signup</a>
-            </div>
-          </div>
+      <div class="text-container">
+        <h1>Welcome to EwketHub</h1>
+        <h2>Create an account and start earning money from your skills!</h2>
+        <div class="action-container">
+          <a class="button login" href="/login">Login</a>
+          <a class="button signup" href="/signup">Signup</a>
         </div>
+      </div>
+      <div class="image-container">
+        <img src="assets/images/video.png" class="image" alt="" srcset="">
       </div>
     </div>
   </main>
