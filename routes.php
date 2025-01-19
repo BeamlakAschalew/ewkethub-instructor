@@ -8,6 +8,7 @@ $router->post('/signup', 'auth/signup/create.php')->only('guest');
 $router->get('/home', 'home.php')->only('auth');
 
 $router->get('/course/create', 'course/create.php')->only('auth');
+$router->post('/course/create', 'course/store.php')->only('auth');
 $router->get('/course/{course-slang}', 'course/detail.php')->only('auth');
 $router->get('/course/{course-slang}/edit', 'course/edit.php')->only('auth');
 
@@ -16,3 +17,5 @@ $router->get('/course/{course-slang}/section/{section-slang}', 'section/index.ph
 
 $router->get('/course/{course-slang}/section/{section-slang}/lesson/create', 'lesson/create.php')->only('auth');
 $router->get('/course/{course-slang}/section/{section-slang}/lesson/{lesson-slang}', 'lesson/index.php')->only('auth');
+
+$router->get('/course-slang-checker/{slang-name}', 'course/slang_checker.php');

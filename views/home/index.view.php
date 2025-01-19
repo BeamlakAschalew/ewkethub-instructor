@@ -22,8 +22,13 @@
 
       <?php foreach ($courses as $course) {
 
-        $title = $course['title'];
-        $description = $course['description'];
+        $title = $course['course_name'];
+        $description = $course['course_description'];
+        $imagePath = $course['course_thumbnail'];
+        $instructorName = $course['course_instructor'];
+        $price = $course['price'];
+        $category = $course['course_category'];
+        $courseSlag = $course['course_slug'];
         include base_path('views/partials/course/course_card.php');
       } ?>
 

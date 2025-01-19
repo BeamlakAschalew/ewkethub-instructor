@@ -1,9 +1,9 @@
-<a href="/course/course-slang">
+<a href="/course/<?= $courseSlag ?>">
     <div class="course">
         <div class="course-image-container">
             <img
                 class="course-image"
-                src="../../assets/images/c5.webp"
+                src="<?= base_url("uploads/images/course_thumbnails/$imagePath") ?>"
                 alt="" />
         </div>
         <div class="course-text">
@@ -11,9 +11,9 @@
                 <?= htmlspecialchars($title) ?>
             </div>
 
-            <div class="course-author">Dr. Angela Yu</div>
-            <div class="course-price">300birr</div>
-            <div class="course-category">Development</div>
+            <div class="course-author"><?= $instructorName ?></div>
+            <div class="course-price"><?= $price ?>birr</div>
+            <div class="course-category"><?= $category ?></div>
         </div>
     </div>
 </a>

@@ -11,11 +11,7 @@ $(document).ready(function () {
   form.submit(function (e) {
     e.preventDefault();
     validateSubmit();
-    console.log("Form submit");
-    console.log(usernameError);
-    console.log(passwordError);
     if (!usernameError && !passwordError) {
-      console.log("Form correct");
       form.off("submit").submit();
     }
   });

@@ -38,10 +38,9 @@ h3 {
 }
 
 .courses-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   padding: 10px 25px;
 }
 .course {
@@ -59,9 +58,11 @@ h3 {
 }
 
 .course-image {
+  aspect-ratio: 16 / 9;
   width: 100%;
   max-width: 350px;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .course-text {

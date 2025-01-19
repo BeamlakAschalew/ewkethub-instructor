@@ -1,13 +1,13 @@
 <?php
 
-view("course/create/index.view.php", []);
+require_once base_path("Core/Database.php");
 
-// error_log("Starting create.php");
+use Core\Database;
 
-// try {
-//     $r = 10 / 0;
-//     view("course/create/index.view.php", []);
-// } catch (Throwable $e) {
-//     error_log("Caught exception: " . $e->getMessage());
-//     abort(['error' => $e->getMessage()], 500);
-// }
+$config = require base_path("essentials/config.php");
+$database = new Database($config["database"]);
+
+$categories = $database->query("SELECT * FROM category")->get();
+$difficulties = $database->query("SELECT * FROM course_difficulty")->get();
+
+view("course/create/index.view.php", ['categories' => $categories, 'difficulties' => $difficulties]);
