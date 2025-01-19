@@ -3,8 +3,18 @@
 a {
   all: unset;
 }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
-  padding-top: 90px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .top-text {
@@ -38,11 +48,13 @@ h3 {
 }
 
 .courses-list {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   padding: 10px 25px;
 }
+
 .course {
   border-radius: 5px;
   width: 100%;
@@ -95,7 +107,25 @@ h3 {
   color: white;
 }
 
+.no-course {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  grid-column: 1 / -1;
+}
+
+.no-course > div {
+  text-align: center;
+}
+
 @media (max-width: 576px) {
+  main {
+    padding-top: 60px;
+  }
 }
 
 @media (min-width: 576px) {

@@ -20,16 +20,21 @@
     <h3>Your courses:</h3>
     <div class="courses-list">
 
-      <?php foreach ($courses as $course) {
+      <?php
+      if (count($courses) == 0) {
+        echo '<div class="no-course"><div>You have no courses created</div><a class="create-button" href="/course/create"><i class="bi bi-plus-circle"></i> Create a course</a></div>';
+      } else {
+        foreach ($courses as $course) {
 
-        $title = $course['course_name'];
-        $description = $course['course_description'];
-        $imagePath = $course['course_thumbnail'];
-        $instructorName = $course['course_instructor'];
-        $price = $course['price'];
-        $category = $course['course_category'];
-        $courseSlag = $course['course_slug'];
-        include base_path('views/partials/course/course_card.php');
+          $title = $course['course_name'];
+          $description = $course['course_description'];
+          $imagePath = $course['course_thumbnail'];
+          $instructorName = $course['course_instructor'];
+          $price = $course['price'];
+          $category = $course['course_category'];
+          $courseSlag = $course['course_slug'];
+          include base_path('views/partials/course/course_card.php');
+        }
       } ?>
 
     </div>

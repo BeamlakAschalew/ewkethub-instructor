@@ -30,10 +30,8 @@
                 <?php endif ?>
                 <a href=""><?= $_SESSION['instructor']['username'] ?></a>
                 <?php if (isset($_SESSION)): ?>
-                    <form method="POST" action="/session">
-                        <input type="hidden" name="_method" value="DELETE" />
-
-                        <button class="text-white">Log Out</button>
+                    <form id="logout-form" method="POST" action="/logout">
+                        <a href="#" class="logout" onclick="document.getElementById('logout-form').submit();">Log Out</a>
                     </form>
                 <?php else: ?>
                     <li class="login">

@@ -1,10 +1,13 @@
 <?php
 
-$router->get('/', 'index.php')->only('guest');
+
 $router->get('/login', 'auth/login/login.php')->only('guest');
 $router->post('/login', 'auth/login/create.php')->only('guest');
 $router->get('/signup', 'auth/signup/signup.php')->only('guest');
 $router->post('/signup', 'auth/signup/create.php')->only('guest');
+$router->post('/logout', 'auth/logout.php')->only('auth');
+
+$router->get('/', 'index.php')->only('guest');
 $router->get('/home', 'home.php')->only('auth');
 
 $router->get('/course/create', 'course/create.php')->only('auth');
