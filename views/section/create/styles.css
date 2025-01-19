@@ -132,6 +132,24 @@ textarea {
   padding: 5px 35px;
 }
 
+.form-error {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.slug-display {
+  color: green;
+  font-size: 0.8rem;
+}
+
 @media (max-width: 576px) {
   .inside-wrapper {
     padding-top: 50px;

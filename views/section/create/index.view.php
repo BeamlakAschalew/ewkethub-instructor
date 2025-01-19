@@ -15,36 +15,49 @@
                 <div class="section-attributes">
                     <div class="field-image">
                         <div class="field-with-text">
-                            <h2 class="top-text">
-                                Create section:
-                            </h2>
-                            <div class="fields">
+                            <form action="#" method="post">
+                                <h2 class="top-text">
+                                    Create section:
+                                </h2>
+                                <div class="slag-container" data-url-slag="<?= $courseSlug ?>"></div>
+                                <div class="fields">
+                                    <div class="field-title first-entry">Section title</div>
 
-                                <div class="field-title first-entry">Section title</div>
-                                <input
-                                    type="text"
-                                    class="form-input second-entry"
-                                    name=""
-                                    id="" />
-                                <div class="field-title first-entry">Section slang</div>
-                                <input
-                                    type="text"
-                                    class="form-input second-entry"
-                                    name=""
-                                    id="" />
-                                <div class="field-title first-entry">Section description</div>
-                                <textarea
-                                    class="form-input second-entry"
-                                    name=""
-                                    id=""></textarea>
-                            </div>
-                            <div class="action-buttons">
-                                <input
-                                    class="submit-button button"
-                                    type="submit"
-                                    value="Create" />
-                                <a href="" class="cancel-button button">Cancel</a>
-                            </div>
+                                    <div class="form-error">
+                                        <input
+                                            type="text"
+                                            class="form-input second-entry"
+                                            name="title"
+                                            id="title" />
+                                        <div class="title-error error"></div>
+                                    </div>
+                                    <div class="field-title first-entry">Section slug</div>
+                                    <div class="form-error">
+                                        <input
+                                            type="text"
+                                            class="form-input second-entry"
+                                            name="slug"
+                                            id="slug" />
+                                        <div class="slug-error error"></div>
+                                        <div class="slug-display"></div>
+                                    </div>
+                                    <div class="field-title first-entry">Section description</div>
+                                    <div class="form-error">
+                                        <textarea
+                                            class="form-input second-entry"
+                                            name="description"
+                                            id="description"></textarea>
+                                        <div class="description-error error"></div>
+                                    </div>
+                                </div>
+                                <div class="action-buttons">
+                                    <input
+                                        class="submit-button button"
+                                        type="submit"
+                                        value="Create" />
+                                    <a href="" class="cancel-button button">Cancel</a>
+                                </div>
+                            </form>
                         </div>
                         <aside>
                             <img
@@ -58,6 +71,8 @@
         </div>
     </main>
     <?php require(base_path(('views/partials/footer.php'))) ?>
+    <script src="<?= base_url('views/script.js') ?>"></script>
+    <script src="<?= base_url('views/section/create/script.js') ?>"></script>
 </body>
 
 </html>

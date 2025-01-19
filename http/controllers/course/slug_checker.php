@@ -4,7 +4,7 @@ require_once base_path("Core/Database.php");
 
 use Core\Database;
 
-$data = $_GET['slang-name'];
+$data = $_GET['slug-name'];
 $config = require base_path("essentials/config.php");
 $database = new Database($config["database"]);
 

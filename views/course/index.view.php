@@ -16,27 +16,28 @@
                     <div class="field-image">
                         <div class="field-with-text">
                             <h2 class="top-text">
-                                Course detail:
+                                <div>Course detail:</div>
+                                <a class="create-button" href="<?= "/course/{$course['course_slug']}/section/create" ?>"><i class="bi bi-plus-circle"></i> Create a course</a>
                             </h2>
                             <div class="fields">
                                 <div class="field-title first-entry">Course thumbnail</div>
                                 <img
-                                    src="../../assets/images/c5.webp"
+                                    src="<?= base_url("uploads/images/course_thumbnails/{$course['course_thumbnail']}"); ?>"
                                     class="course-image second-entry"
                                     alt=""
                                     srcset="" />
                                 <div class="field-title first-entry">Course title</div>
-                                <h2>This is a course title</h2>
-                                <div class="field-title first-entry">Course slang</div>
-                                <h2>unique-course-url</h2>
+                                <h2><?= $course['course_name'] ?></h2>
+                                <div class="field-title first-entry">Course slug</div>
+                                <h2><?= $course['course_slug'] ?></h2>
                                 <div class="field-title first-entry">Course description</div>
-                                <p class="course-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, reprehenderit! Dolore tempora, cum perferendis iure culpa quia ipsum dicta dolores mollitia sequi. Iste aliquam rem molestias, nostrum delectus maxime! Blanditiis dicta totam at necessitatibus ad consectetur, tempora aspernatur molestias placeat velit ea repellat magnam dolorem, rem dignissimos quibusdam aut eveniet?</p>
+                                <p class="course-detail"><?= $course['course_description']; ?></p>
                                 <div class="field-title first-entry">Course category</div>
-                                <h2>Development</h2>
+                                <h2><?= $course['course_category']; ?></h2>
                                 <div class="field-title first-entry">Course difficulty</div>
-                                <h2>Beginner</h2>
+                                <h2><?= $course['difficulty'] ?></h2>
                                 <div class="field-title first-entry">Course price</div>
-                                <h2>5000</h2>
+                                <h2><?= $course['price'] ?></h2>
                             </div>
                             <div class="action-buttons">
                                 <a href="/course/course-slang/edit" class="submit-button button">Edit</a>

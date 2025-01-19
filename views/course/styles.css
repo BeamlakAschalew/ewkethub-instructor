@@ -46,9 +46,10 @@ a {
 }
 
 .course-image {
+  aspect-ratio: 16 / 9;
   width: 100%;
-  height: auto;
-  display: block;
+  max-height: 350px;
+  object-fit: cover;
 }
 
 .course-editor {
@@ -143,6 +144,14 @@ h2 {
 
 .course-detail {
   margin: 0;
+}
+
+.create-button {
+  background-color: #00b3ff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 @media (max-width: 576px) {

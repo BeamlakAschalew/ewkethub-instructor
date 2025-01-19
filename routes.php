@@ -12,13 +12,15 @@ $router->get('/home', 'home.php')->only('auth');
 
 $router->get('/course/create', 'course/create.php')->only('auth');
 $router->post('/course/create', 'course/store.php')->only('auth');
-$router->get('/course/{course-slang}', 'course/detail.php')->only('auth');
-$router->get('/course/{course-slang}/edit', 'course/edit.php')->only('auth');
+$router->get('/course/{course-slug}', 'course/detail.php')->only('auth');
+$router->get('/course/{course-slug}/edit', 'course/edit.php')->only('auth');
 
-$router->get('/course/{course-slang}/section/create', 'section/create.php')->only('auth');
-$router->get('/course/{course-slang}/section/{section-slang}', 'section/index.php')->only('auth');
+$router->get('/course/{course-slug}/section/create', 'section/create.php')->only('auth');
+$router->post('/course/{course-slug}/section/create', 'section/store.php')->only('auth');
+$router->get('/course/{course-slug}/section/{section-slug}', 'section/index.php')->only('auth');
 
-$router->get('/course/{course-slang}/section/{section-slang}/lesson/create', 'lesson/create.php')->only('auth');
-$router->get('/course/{course-slang}/section/{section-slang}/lesson/{lesson-slang}', 'lesson/index.php')->only('auth');
+$router->get('/course/{course-slug}/section/{section-slug}/lesson/create', 'lesson/create.php')->only('auth');
+$router->get('/course/{course-slug}/section/{section-slug}/lesson/{lesson-slug}', 'lesson/index.php')->only('auth');
 
-$router->get('/course-slang-checker/{slang-name}', 'course/slang_checker.php');
+$router->get('/course-slug-checker/{slug-name}', 'course/slug_checker.php');
+$router->get('/section-slug-checker/{course-slug}/{section-slug}', 'section/slug_checker.php');
