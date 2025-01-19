@@ -17,7 +17,7 @@
                         <div class="field-with-text">
                             <h2 class="top-text">
                                 <div>Course detail:</div>
-                                <a class="create-button" href="<?= "/course/{$course['course_slug']}/section/create" ?>"><i class="bi bi-plus-circle"></i> Create a course</a>
+                                <a class="create-button" href="<?= "/course/{$course['course_slug']}/section/create" ?>"><i class="bi bi-plus-circle"></i> Create a section</a>
                             </h2>
                             <div class="fields">
                                 <div class="field-title first-entry">Course thumbnail</div>
@@ -56,8 +56,11 @@
                 <div class="top-text">Course sections</div>
                 <div class="courses-container">
 
-                    <?php for ($i = 0; $i < 9; $i++) {
+                    <?php $i = 1;
+                    foreach ($sections as $section) {
+                        $section['section_name'] = $i . " " . $section['section_name'];
                         include(base_path('views/partials/course/section_card.php'));
+                        $i++;
                     } ?>
                 </div>
             </div>

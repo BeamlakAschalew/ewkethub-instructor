@@ -137,6 +137,7 @@ function validateSlug() {
         courseSlugError = true;
       } else {
         $(".slug-error").hide();
+        $("#slug").val(slug);
         $(".slug-display").text(
           `The course URL will be https://ewkethub.beamlak.dev/course/${slug}`
         );

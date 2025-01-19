@@ -154,6 +154,30 @@ h2 {
   cursor: pointer;
 }
 
+.course-sections {
+  padding: 30px;
+}
+
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.course-section {
+  padding: 20px;
+  border: 1px solid #f7f9fa;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #00b3ff;
+  color: white;
+  font-weight: bold;
+}
+
+.course-section:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 576px) {
   .inside-wrapper {
     padding-top: 50px;
@@ -175,24 +199,4 @@ h2 {
   aside {
     display: none;
   }
-}
-
-.course-sections {
-  padding: 30px;
-}
-
-.courses-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.course-section {
-  padding: 20px;
-  border: 1px solid #f7f9fa;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  background-color: #00b3ff;
-  color: white;
-  font-weight: bold;
 }

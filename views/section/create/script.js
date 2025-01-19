@@ -90,6 +90,7 @@ function validateSlug() {
         courseSlugError = true;
       } else {
         $(".slug-error").hide();
+        $("#slug").val(slug);
         $(".slug-display").text(
           `The section URL will be https://ewkethub.beamlak.dev/course/${courseSlug}/section/${slug}`
         );
