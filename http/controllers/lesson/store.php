@@ -19,7 +19,7 @@ $course = $database->query('SELECT id, instructor_id FROM course WHERE course_sl
 
 if (!$section) {
     abort([], 404);
-} else if (!owns($course['id'])) {
+} else if (!owns($course['instructor_id'])) {
     abort([], 403);
 }
 

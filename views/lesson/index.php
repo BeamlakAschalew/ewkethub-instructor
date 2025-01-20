@@ -19,7 +19,7 @@
             <div class="lesson-content">
                 <div class="lesson-video">
                     <video class="plyr" controls>
-                        <source src="<?= base_url('assets/videos/video.mp4') ?>" type="video/mp4">
+                        <source src="<?= base_url("uploads/videos/lesson_videos/{$lesson['video_file_path']}") ?>" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>

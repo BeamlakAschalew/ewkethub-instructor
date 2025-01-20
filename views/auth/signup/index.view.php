@@ -23,7 +23,7 @@
             <div class="profile-image-container">
               <label for="profileImage">
                 <div class="profile-image-preview">
-                  <img id="profilePreview" src="">
+                  <img id="profilePreview" src="<?= base_url('assets/images/user-avatar.png') ?>" alt="Profile image" />
                 </div>
               </label>
               <label for="profileImage" class="profile-image-label">Upload Profile Image</label>

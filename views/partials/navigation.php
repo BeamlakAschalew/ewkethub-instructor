@@ -13,9 +13,9 @@
     <div class="main-navigation">
         <div class="nav-items">
             <ul class="site-navigation">
-                <li class="selected"><a href="/home">Home</a></li>
+                <li <?= urlIs('/home') ? 'class="selected"' : '' ?>><a href="/home">Home</a></li>
                 <li><a href="/home">My courses</a></li>
-                <li><a href="/course/create">Create a course</a></li>
+                <li <?= urlIs('/course/create') ? 'class="selected"' : '' ?>><a href="/course/create">Create a course</a></li>
             </ul>
         </div>
 

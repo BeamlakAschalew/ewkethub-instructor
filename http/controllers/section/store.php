@@ -16,7 +16,7 @@ $course = $database->query('SELECT id, instructor_id FROM course WHERE course_sl
 
 if (!$course) {
     abort([], 404);
-} else if (owns($course['instructor_id'])) {
+} else if (!owns($course['instructor_id'])) {
     abort([], 403);
 } else {
     $courseId = $course['id'];

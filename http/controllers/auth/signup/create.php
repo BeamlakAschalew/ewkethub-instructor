@@ -31,8 +31,8 @@ if (!is_dir($targetDir)) {
 $file = $_FILES['profileImage'];
 $fileName = null;
 if (isset($file) && $file['error'] === 0) {
-    $fileName = basename($file['name']);
-    $fileName = preg_replace('/[^a-zA-Z0-9._-]/', '_', $fileName);
+    $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
+    $fileName = time() . '.' . $fileExtension;
     $fileTmpPath = $file['tmp_name'];
     $fileType = $file['type'];
     $targetFilePath = $targetDir . $fileName;

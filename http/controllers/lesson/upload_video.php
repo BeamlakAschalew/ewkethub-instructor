@@ -15,7 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['file'])) {
         logMessage("File found: $uploadDir\n");
         $file = $_FILES['file'];
-        $fileName = basename($file['name']);
+        $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
+        $fileName = time() . '.' . $fileExtension;
         $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
         $allowedExtensions = ['mp4', 'mkv', 'mov'];
 
@@ -24,8 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo json_encode(['success' => false, 'message' => 'Invalid file type. Only MP4, MKV, and MOV are allowed.']);
             exit;
         }
-
-        $fileName = time() . $fileName;
         $targetFilePath = $uploadDir . $fileName;
 
         logMessage("Attempting to upload file: $fileName\n");
