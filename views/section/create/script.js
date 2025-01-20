@@ -44,11 +44,11 @@ function validateTitle() {
   let title = $("#title").val();
   if (title.length === 0) {
     $(".title-error").show();
-    $(".title-error").text("Course name cannot be empty");
+    $(".title-error").text("Section name cannot be empty");
     courseTitleError = true;
   } else if (title.length < 8 || title.length > 90) {
     $(".title-error").show();
-    $(".title-error").text("Length of course name must be between 8 and 90");
+    $(".title-error").text("Length of section name must be between 8 and 90");
     courseTitleError = true;
   } else {
     $(".title-error").hide();
@@ -91,6 +91,7 @@ function validateSlug() {
       } else {
         $(".slug-error").hide();
         $("#slug").val(slug);
+        $(".slug-display").show();
         $(".slug-display").text(
           `The section URL will be https://ewkethub.beamlak.dev/course/${courseSlug}/section/${slug}`
         );

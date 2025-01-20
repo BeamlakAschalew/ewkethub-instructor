@@ -104,6 +104,7 @@ function validateTitle() {
     courseTitleError = false;
   }
 }
+
 function validateSlug() {
   let slug = $("#slug").val();
   slug = convertToSlug(slug);
@@ -126,7 +127,7 @@ function validateSlug() {
   }
 
   $.ajax({
-    url: `/section-slug-checker/${slug}`,
+    url: `/course-slug-checker/${slug}`,
     method: "GET",
     dataType: "json",
     success: function (data) {
@@ -138,6 +139,7 @@ function validateSlug() {
       } else {
         $(".slug-error").hide();
         $("#slug").val(slug);
+        $(".slug-display").show();
         $(".slug-display").text(
           `The course URL will be https://ewkethub.beamlak.dev/course/${slug}`
         );
