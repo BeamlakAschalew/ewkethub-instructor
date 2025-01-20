@@ -87,51 +87,56 @@ function uploadVideo(file) {
     url: "/upload-video",
     type: "POST",
     data: formData,
-    contentType: false,
     processData: false,
+    contentType: false,
     xhr: function () {
-      const xhr = new XMLHttpRequest();
-      xhr.upload.addEventListener("progress", function (e) {
-        if (e.lengthComputable) {
-          const percentComplete = (e.loaded / e.total) * 100;
-          $(".progress-text").text(`${Math.floor(percentComplete)}%`);
-          $(".inner-slider").css("width", `${percentComplete}%`);
-        }
-      });
+      var xhr = new window.XMLHttpRequest();
+      xhr.upload.addEventListener(
+        "progress",
+        function (e) {
+          if (e.lengthComputable) {
+            var percentComplete = (e.loaded / e.total) * 100;
+            $(".progress-text").text(`${Math.floor(percentComplete)}%`);
+            $(".inner-slider").css("width", `${percentComplete}%`);
+          }
+        },
+        false
+      );
       return xhr;
     },
     success: function (response) {
       if (response.success) {
-        uploadedVideoFileName = response.fileName;
-        const basePath = `${window.location.protocol}//${window.location.host}`;
-        const videoURL = `/uploads/videos/lesson_videos/${uploadedVideoFileName}`;
+        var uploadedVideoFileName = response.fileName;
+        var basePath = `${window.location.protocol}//${window.location.host}`;
+        var videoURL = `/uploads/videos/lesson_videos/${uploadedVideoFileName}`;
         $("#video-source").attr("src", basePath + videoURL);
         $("#video-preview").show();
-        player.source = {
-          type: "video",
-          sources: [
-            {
-              src: basePath + videoURL,
-              type: "video/mp4",
-            },
-          ],
-        };
-        $(".video-error").hide();
+
+        if (player) {
+          player.source = {
+            type: "video",
+            sources: [
+              {
+                src: basePath + videoURL,
+                type: "video/mp4",
+              },
+            ],
+          };
+          player.play();
+        } else {
+          console.error("Video player is not initialized.");
+        }
+
         lessonVideoError = false;
       } else {
-        alert("Video upload failed. Please try again.");
+        console.error("Server response indicates failure:", response.message);
+        alert("Video upload failed: " + response.message);
         $("#lesson_video").val("");
-        $(".upload-text").text("Click to upload video");
-        $("#video-preview").hide();
-        lessonVideoError = true;
       }
     },
-    error: function () {
+    error: function (xhr, status, error) {
+      console.error("Error during video upload:", status, error);
       alert("An error occurred during video upload.");
-      $("#lesson_video").val("");
-      $(".upload-text").text("Click to upload video");
-      $("#video-preview").hide();
-      lessonVideoError = true;
     },
   });
 }
