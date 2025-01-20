@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Course detail</title>
+    <title><?= $course['course_name'] ?></title>
     <?php require(base_path('views/partials/head.php')) ?>
     <link rel="stylesheet" href="<?= base_url('views/course/styles.css') ?>">
 </head>
@@ -16,7 +16,7 @@
                     <div class="field-image">
                         <div class="field-with-text">
                             <h2 class="top-text">
-                                <div>Course detail:</div>
+                                <div>Course detail: <?= $course['course_name'] ?></div>
                                 <a class="create-button" href="<?= "/course/{$course['course_slug']}/section/create" ?>"><i class="bi bi-plus-circle"></i> Create a section</a>
                             </h2>
                             <div class="fields">

@@ -6,7 +6,7 @@
     <?php require(base_path('views/partials/head.php')) ?>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
     <link rel="stylesheet" href="<?= base_url('views/lesson/styles.css') ?>">
-    <title>Document</title>
+    <title><?= $lesson['name'] ?></title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <main class="main-wrapper">
         <div class="inside-wrapper">
             <h2 class="top-text">
-                Lesson: lesson name:
+                Lesson: <?= $lesson['name'] ?>
             </h2>
             <div class="lesson-content">
                 <div class="lesson-video">
@@ -24,7 +24,7 @@
                     </video>
                 </div>
                 <div class="lesson-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                    <p><?= $lesson['description'] ?></p>
                 </div>
             </div>
         </div>

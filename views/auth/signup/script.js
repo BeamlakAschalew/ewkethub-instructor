@@ -12,7 +12,6 @@ $(document).ready(function () {
   $("#profileImage").on("change", function (event) {
     const file = event.target.files[0];
     if (file) {
-      console.log("File loaded");
       const reader = new FileReader();
       reader.onload = function (e) {
         $("#profilePreview").attr("src", e.target.result);

@@ -53,6 +53,10 @@ function base_path_display() {
     return str_replace('/public', '', dirname($_SERVER['SCRIPT_NAME']));
 }
 
+function owns($id) {
+    return $_SESSION['instructor']['id'] == $id;
+}
+
 // function old($key, $default = '')
 // {
 //     return Core\Session::get('old')[$key] ?? $default;

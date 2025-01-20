@@ -77,9 +77,7 @@ function validateSubmit() {
 }
 
 function validateImage() {
-  console.log("Validation called");
   let image = $(".course-image").attr("src");
-  console.log(image);
   if (image === "") {
     courseThumbnailError = true;
     $(".image-error").text("Set a YouTube style thumbnail for your course");

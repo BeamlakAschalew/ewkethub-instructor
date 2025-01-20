@@ -25,4 +25,5 @@ $router->get('/course/{course-slug}/section/{section-slug}/lesson/{lesson-slug}'
 
 $router->get('/course-slug-checker/{slug-name}', 'course/slug_checker.php');
 $router->get('/section-slug-checker/{course-slug}/{section-slug}', 'section/slug_checker.php');
+$router->get('/lesson-slug-checker/{course-slug}/{section-slug}/{lesson-slug}', 'lesson/slug_checker.php');
 $router->post('/upload-video', 'lesson/upload_video.php')->only('auth');

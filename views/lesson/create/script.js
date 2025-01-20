@@ -12,7 +12,6 @@ const player = new Plyr("#video-player");
 
 $(document).ready(function () {
   form.submit(function (e) {
-    console.log("Form submitted");
     e.preventDefault();
     validateSubmit();
 
@@ -20,10 +19,10 @@ $(document).ready(function () {
       !lessonTitleError &&
       !lessonSlugError &&
       !lessonDescriptionError &&
-      uploadedVideoFileName
+      !lessonVideoError
     ) {
-      const courseSlug = $(".slag-container").data("url-slag");
-      const sectionSlug = $(".slag-container").data("url-sectionSlug");
+      const courseSlug = $(".slug-container").data("url-slug");
+      const sectionSlug = $(".section-slug-container").data("url-slug");
 
       $("<input>")
         .attr({
@@ -50,8 +49,11 @@ $(document).ready(function () {
   $("#lesson_video").on("change", function () {
     const file = this.files[0];
     if (!file) return;
+
     const fileName = file.name;
     const fileType = file.type;
+
+    const allowedTypes = ["video/mp4", "video/mkv", "video/quicktime"];
 
     if (fileName) {
       $(".upload-text").text(fileName);
@@ -59,11 +61,7 @@ $(document).ready(function () {
       $(".upload-text").text("Click to upload video");
     }
 
-    if (
-      fileType === "video/mp4" ||
-      fileType === "video/mkv" ||
-      fileType === "video/mov"
-    ) {
+    if (allowedTypes.includes(fileType)) {
       selectedFile = file;
       $("#manual-upload").show();
     } else {
@@ -98,7 +96,6 @@ function uploadVideo(file) {
           const percentComplete = (e.loaded / e.total) * 100;
           $(".progress-text").text(`${Math.floor(percentComplete)}%`);
           $(".inner-slider").css("width", `${percentComplete}%`);
-          console.log(`Upload progress: ${percentComplete}%`);
         }
       });
       return xhr;
@@ -119,7 +116,7 @@ function uploadVideo(file) {
             },
           ],
         };
-
+        $(".video-error").hide();
         lessonVideoError = false;
       } else {
         alert("Video upload failed. Please try again.");
@@ -157,6 +154,7 @@ function validateSubmit() {
   validateTitle();
   validateSlug();
   validateDescription();
+  validateVideo();
 }
 
 function validateTitle() {
@@ -195,13 +193,16 @@ function validateSlug() {
     $(".slug-error").hide();
   }
 
-  const courseSlug = $(".slag-container").data("url-slag");
+  const sectionSlugInner = $(".section-slug-container").data("url-slug");
+  const courseSlugInner = $(".slug-container").data("url-slug");
 
+  console.log(courseSlugInner, sectionSlugInner, slug);
   $.ajax({
-    url: `/section-slug-checker/${courseSlug}/${slug}`,
+    url: `/lesson-slug-checker/${courseSlugInner}/${sectionSlugInner}/${slug}`,
     method: "GET",
     dataType: "json",
     success: function (data) {
+      console.log(data);
       if (!data.available) {
         $(".slug-error").text("This slug is already taken by another course");
         $(".slug-error").show();
@@ -210,10 +211,10 @@ function validateSlug() {
       } else {
         $(".slug-error").hide();
         $("#slug").val(slug);
-        $(".slug-display").show();
         $(".slug-display").text(
-          `The section URL will be https://ewkethub.beamlak.dev/course/${courseSlug}/section/${slug}`
+          `The lesson URL will be https://ewkethub.beamlak.dev/course/${courseSlugInner}/section/${sectionSlugInner}/lesson/${slug}`
         );
+        $(".slug-display").show();
         lessonSlugError = false;
       }
     },
@@ -246,5 +247,16 @@ function validateDescription() {
   } else {
     $(".description-error").hide();
     lessonDescriptionError = false;
+  }
+}
+
+function validateVideo() {
+  if (!uploadedVideoFileName) {
+    $(".video-error").show();
+    $(".video-error").text("Please upload a video");
+    lessonVideoError = true;
+  } else {
+    $(".video-error").hide();
+    lessonVideoError = false;
   }
 }

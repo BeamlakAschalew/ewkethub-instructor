@@ -7,7 +7,6 @@ let sectionDescriptionError = true;
 
 $(document).ready(function () {
   form.submit(function (e) {
-    console.log("Form submitted");
     e.preventDefault();
     validateSubmit();
     if (!courseTitleError && !courseSlugError && !courseDescriptionError) {

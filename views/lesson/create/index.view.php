@@ -10,7 +10,8 @@
 
 <body>
     <?php require(base_path('views/partials/navigation.php')) ?>
-    <div class="slag-container" data-url-slag="<?= $courseSlug ?>" data-url-sectionSlug="<?= $sectionSlug ?>" style="display: none"></div>
+    <div class="slug-container" data-url-slug="<?= $courseSlug ?>" style="display: none"></div>
+    <div class="section-slug-container" data-url-slug="<?= $sectionSlug ?>" style="display: none"></div>
     <main class="wrapper">
         <div class="inside-wrapper">
             <div class="lesson-editor">
@@ -32,14 +33,15 @@
                                             id="title" />
                                         <div class="title-error error"></div>
                                     </div>
-                                    <div class="field-title first-entry">Lesson slang</div>
+                                    <div class="field-title first-entry">Lesson slug</div>
                                     <div class="form-error">
                                         <input
                                             type="text"
                                             class="form-input second-entry"
-                                            name="slang"
-                                            id="slang" />
+                                            name="slug"
+                                            id="slug" />
                                         <div class="slug-error error"></div>
+                                        <div class="slug-display"></div>
                                     </div>
                                     <div class="field-title first-entry">Lesson description</div>
                                     <div class="form-error">
@@ -53,7 +55,7 @@
                                     <div class="form-error">
                                         <div class="video-section">
                                             <div class="custom-file-upload">
-                                                <input type="file" class="form-input" name="lesson_video" id="lesson_video" accept="video/*" required />
+                                                <input type="file" class="form-input" name="lesson_video" id="lesson_video" accept="video/*" />
                                                 <div class="upload-area" id="uploadfile">
                                                     <span class="upload-icon">+</span>
                                                     <span class="upload-text">Click to upload video</span>
