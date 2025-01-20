@@ -106,7 +106,7 @@ function uploadVideo(file) {
     },
     success: function (response) {
       if (response.success) {
-        var uploadedVideoFileName = response.fileName;
+        uploadedVideoFileName = response.fileName;
         var basePath = `${window.location.protocol}//${window.location.host}`;
         var videoURL = `/uploads/videos/lesson_videos/${uploadedVideoFileName}`;
         $("#video-source").attr("src", basePath + videoURL);
@@ -201,13 +201,11 @@ function validateSlug() {
   const sectionSlugInner = $(".section-slug-container").data("url-slug");
   const courseSlugInner = $(".slug-container").data("url-slug");
 
-  console.log(courseSlugInner, sectionSlugInner, slug);
   $.ajax({
     url: `/lesson-slug-checker/${courseSlugInner}/${sectionSlugInner}/${slug}`,
     method: "GET",
     dataType: "json",
     success: function (data) {
-      console.log(data);
       if (!data.available) {
         $(".slug-error").text("This slug is already taken by another course");
         $(".slug-error").show();
