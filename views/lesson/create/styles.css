@@ -213,6 +213,15 @@ textarea {
   border-radius: 5px;
 }
 
+.upload-button {
+  margin-top: 20px;
+  background-color: #00b3ff;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
 @media (max-width: 576px) {
   .inside-wrapper {
     padding-top: 50px;

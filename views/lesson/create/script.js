@@ -6,6 +6,7 @@ let lessonSlugError = true;
 let lessonDescriptionError = true;
 let lessonVideoError = true;
 let uploadedVideoFileName = null;
+let selectedFile = null;
 
 const player = new Plyr("#video-player");
 
@@ -15,7 +16,6 @@ $(document).ready(function () {
     e.preventDefault();
     validateSubmit();
 
-    // Check all validations
     if (
       !lessonTitleError &&
       !lessonSlugError &&
@@ -25,7 +25,6 @@ $(document).ready(function () {
       const courseSlug = $(".slag-container").data("url-slag");
       const sectionSlug = $(".slag-container").data("url-sectionSlug");
 
-      // Add the uploaded video file name to the form as a hidden input
       $("<input>")
         .attr({
           type: "hidden",
@@ -50,6 +49,7 @@ $(document).ready(function () {
 
   $("#lesson_video").on("change", function () {
     const file = this.files[0];
+    if (!file) return;
     const fileName = file.name;
     const fileType = file.type;
 
@@ -64,7 +64,8 @@ $(document).ready(function () {
       fileType === "video/mkv" ||
       fileType === "video/mov"
     ) {
-      uploadVideo(file);
+      selectedFile = file;
+      $("#manual-upload").show();
     } else {
       alert("Invalid file type. Please upload a video file (MP4, MKV, MOV).");
       $("#lesson_video").val("");
@@ -72,12 +73,18 @@ $(document).ready(function () {
       $("#video-preview").hide();
     }
   });
+
+  $("#manual-upload").on("click", function () {
+    if (selectedFile) {
+      uploadVideo(selectedFile);
+    }
+  });
 });
 
 function uploadVideo(file) {
   const formData = new FormData();
   formData.append("file", file);
-
+  $(".video-progress").show();
   $.ajax({
     url: "/upload-video",
     type: "POST",

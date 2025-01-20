@@ -58,6 +58,9 @@
                                                     <span class="upload-icon">+</span>
                                                     <span class="upload-text">Click to upload video</span>
                                                 </div>
+                                                <div class="upload-actions">
+                                                    <div type="button" id="manual-upload" class="upload-button button" style="display: none;">Submit Video</div>
+                                                </div>
                                             </div>
                                             <div class="video-preview" id="video-preview" style="display: none;">
                                                 <video id="video-player" class="plyr" controls>
@@ -67,9 +70,9 @@
                                             </div>
                                         </div>
                                         <div class="video-error error"></div>
-                                        <div class="video-progress">
+                                        <div class="video-progress" style="display: none;">
                                             <div class="inner-slider">
-                                                <div class="progress-text" id="progress-text">90%</div>
+                                                <div class="progress-text" id="progress-text">0%</div>
                                             </div>
                                         </div>
                                     </div>
