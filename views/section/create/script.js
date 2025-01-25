@@ -57,6 +57,7 @@ function validateTitle() {
 function validateSlug() {
   let slug = $("#slug").val();
   slug = convertToSlug(slug);
+  $("#slug").val(slug);
 
   if (slug.length === 0) {
     $(".slug-error").show();
@@ -89,7 +90,6 @@ function validateSlug() {
         courseSlugError = true;
       } else {
         $(".slug-error").hide();
-        $("#slug").val(slug);
         $(".slug-display").show();
         $(".slug-display").text(
           `The section URL will be https://ewkethub.beamlak.dev/course/${courseSlug}/section/${slug}`

@@ -19,7 +19,7 @@
         </div>
         <div class="form-wrapper">
           <h1>Signup and start teaching</h1>
-          <form action="signup" method="post" class="main-form" enctype="multipart/form-data">
+          <form action="/signup" method="post" class="main-form" enctype="multipart/form-data">
             <div class="profile-image-container">
               <label for="profileImage">
                 <div class="profile-image-preview">
@@ -90,11 +90,12 @@
             <?php endif; ?>
             <div class="action-buttons">
               <input class="submit-button" type="submit" value="Signup" />
-              <button class="login-button">Login</button>
+              <a href="/login" class="login-button">Login</a>
             </div>
-          </form>
         </div>
+        </form>
       </div>
+    </div>
     </div>
   </main>
   <script src="<?= base_url('views/script.js') ?>"></script>

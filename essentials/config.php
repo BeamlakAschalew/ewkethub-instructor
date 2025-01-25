@@ -2,14 +2,14 @@
 
 $environment = $_SERVER['SERVER_NAME'];
 
-if ($environment == 'localhost')
+if ($environment == 'localhost' || $environment == 'ewkethub-instructor.test')
     return [
         'database' => [
             'host' => 'localhost',
             'port' => 3306,
             'dbname' => 'ewkethub_test',
             'username' => 'root',
-            'password' => ''
+            'password' => 'newpassword'
         ],
     ];
 else

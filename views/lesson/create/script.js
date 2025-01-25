@@ -180,6 +180,7 @@ function validateTitle() {
 function validateSlug() {
   let slug = $("#slug").val();
   slug = convertToSlug(slug);
+  $("#slug").val(slug);
 
   if (slug.length === 0) {
     $(".slug-error").show();
@@ -213,7 +214,7 @@ function validateSlug() {
         lessonSlugError = true;
       } else {
         $(".slug-error").hide();
-        $("#slug").val(slug);
+
         $(".slug-display").text(
           `The lesson URL will be https://ewkethub.beamlak.dev/course/${courseSlugInner}/section/${sectionSlugInner}/lesson/${slug}`
         );

@@ -4,7 +4,7 @@ require_once base_path("Core/Database.php");
 
 use Core\Database;
 
-$targetDir = "../uploads/images/course_thumbnails/";
+$targetDir = "../../shared/images/course_thumbnails/";
 $config = require base_path("essentials/config.php");
 $database = new Database($config["database"]);
 

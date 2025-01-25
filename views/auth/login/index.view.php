@@ -46,7 +46,7 @@
 
             <div class="action-buttons">
               <input class="submit-button" type="submit" value="Login" />
-              <button class="signup-button">Signup</button>
+              <a href="/signup" class="signup-button">Signup</a>
             </div>
           </form>
         </div>
