@@ -49,6 +49,11 @@ function base_url($path = '') {
     return rtrim($basePath, '/') . '/' . ltrim($path, '/');
 }
 
+function base_assets_url($path = '') {
+    $basePath = dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])));
+    return rtrim($basePath, '/') . '/' . ltrim($path, '/');
+}
+
 function base_path_display() {
     return str_replace('/public', '', dirname($_SERVER['SCRIPT_NAME']));
 }

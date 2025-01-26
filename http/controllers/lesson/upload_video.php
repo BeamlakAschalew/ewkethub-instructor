@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $uploadDir = '../uploads/videos/lesson_videos/';
+    $uploadDir = '../../ewkethub_shared_assets/videos/lesson_videos/';
     if (!is_dir($uploadDir)) {
         mkdir($uploadDir, 0777, true);
     }
