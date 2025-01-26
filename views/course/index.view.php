@@ -22,7 +22,7 @@
                             <div class="fields">
                                 <div class="field-title first-entry">Course thumbnail</div>
                                 <img
-                                    src="<?= base_url("uploads/images/course_thumbnails/{$course['course_thumbnail']}"); ?>"
+                                    src="<?= base_url("ewkethub_shared_assets/images/course_thumbnails/{$course['course_thumbnail']}"); ?>"
                                     class="course-image second-entry"
                                     alt=""
                                     srcset="" />

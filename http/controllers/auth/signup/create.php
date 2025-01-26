@@ -8,7 +8,7 @@ require_once base_path("Core/Database.php");
 use Core\Database;
 
 $errors = [];
-$targetDir = "../uploads/images/profile_images/";
+$targetDir = "../../ewkethub_shared_assets/images/instructors/profile_images/";
 $data = $_POST;
 $config = require base_path("essentials/config.php");
 $database = new Database($config["database"]);

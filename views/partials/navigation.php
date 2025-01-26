@@ -23,7 +23,7 @@
             <ul class="auth-navigation">
                 <?php if (isset($_SESSION)): ?>
                     <?php if (isset($_SESSION['instructor']['profilePath']) && $_SESSION['instructor']['profilePath'] !== ""): ?>
-                        <img src="<?= base_url() ?>uploads/images/profile_images/<?= $_SESSION['instructor']['profilePath'] ?>" class="profile-image" alt="Profile Image" />
+                        <img src="<?= base_url("ewkethub_shared_assets/images/instructors/profile_images/{$_SESSION['instructor']['profilePath']}") ?>" class="profile-image" alt="Profile Image" />
                     <?php else: ?>
                         <img src="<?= base_url() ?>assets/images/user-avatar.png" class="profile-image" alt="Profile Image" />
                     <?php endif ?>

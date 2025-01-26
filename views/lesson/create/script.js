@@ -108,8 +108,9 @@ function uploadVideo(file) {
       if (response.success) {
         uploadedVideoFileName = response.fileName;
         var basePath = `${window.location.protocol}//${window.location.host}`;
-        var videoURL = `/uploads/videos/lesson_videos/${uploadedVideoFileName}`;
+        var videoURL = `/ewkethub_shared_assets/videos/lesson_videos/${uploadedVideoFileName}`;
         $("#video-source").attr("src", basePath + videoURL);
+        console.log(`${basePath}${videoURL}`);
         $("#video-preview").show();
 
         if (player) {

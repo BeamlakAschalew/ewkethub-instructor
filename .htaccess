@@ -1,14 +1,14 @@
-Options -Indexes
 RewriteEngine On
 RewriteBase /
 
-# RewriteCond %{REQUEST_URI} ^/assets [NC]
-# RewriteRule ^ - [L]
+# Route /ewkethub_shared_assets to serve_assets.php
+RewriteCond %{REQUEST_URI} ^/ewkethub_shared_assets [NC]
+RewriteRule ^(.*)$ serve_assets.php [L]
 
-# Redirect only the root URL to public/index.php
+# Redirect root URL to public/index.php
 RewriteRule ^$ public/index.php [L]
 
-# Redirect all other requests to public/index.php if not a file or directory
+# Redirect other requests to public/index.php if not a file/directory
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ public/index.php [L]

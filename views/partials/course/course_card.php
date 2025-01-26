@@ -3,7 +3,7 @@
         <div class="course-image-container">
             <img
                 class="course-image"
-                src="<?= base_url("uploads/images/course_thumbnails/$imagePath") ?>"
+                src="<?= base_url("ewkethub_shared_assets/images/course_thumbnails/$imagePath") ?>"
                 alt="" />
         </div>
         <div class="course-text">
