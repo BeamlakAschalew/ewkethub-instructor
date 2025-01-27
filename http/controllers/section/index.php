@@ -3,8 +3,6 @@
 $sectionSlug = $_GET['section-slug'];
 $courseSlug = $_GET['course-slug'];
 
-require_once base_path("Core/Database.php");
-
 use Core\Database;
 
 $config = require base_path("essentials/config.php");

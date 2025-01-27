@@ -41,6 +41,7 @@ function validateUsername() {
     $(".email-username-error").text("Username or email cannot be empty");
     usernameError = true;
   } else {
+    $(".email-username-error").hide();
     usernameError = false;
   }
 }
@@ -51,6 +52,7 @@ function validatePassword() {
     $(".password-error").text("Password cannot be empty");
     repeatPasswordError = true;
   } else {
+    $(".password-error").hide();
     passwordError = false;
   }
 }

@@ -51,31 +51,42 @@ class Router {
     }
 
     public function route($uri, $method) {
-        foreach ($this->routes as $route) {
-            $pattern = preg_replace('/\{[^\}]+\}/', '([^/]+)', $route['uri']);
+        $uriSegments = explode('/', trim($uri, '/'));
 
-            if (preg_match("#^$pattern$#", $uri, $matches) && $route['method'] === strtoupper($method)) {
-                array_shift($matches);
+        foreach ($this->routes as $route) {
+            $routeSegments = explode('/', trim($route['uri'], '/'));
+
+            if (count($uriSegments) !== count($routeSegments)) {
+                continue;
+            }
+
+            $params = [];
+            $isMatch = true;
+
+            foreach ($routeSegments as $index => $segment) {
+                if (strpos($segment, '{') === 0 && strpos($segment, '}') === strlen($segment) - 1) {
+                    $paramName = trim($segment, '{}');
+                    $params[$paramName] = $uriSegments[$index];
+                } else if ($segment !== $uriSegments[$index]) {
+                    $isMatch = false;
+                    break;
+                }
+            }
+
+            if ($isMatch && $route['method'] === strtoupper($method)) {
                 Middleware::resolve($route['middleware']);
 
-                if (preg_match_all('/\{([^\}]+)\}/', $route['uri'], $paramNames)) {
-                    foreach ($paramNames[1] as $index => $name) {
-                        if ($method === 'GET') {
-                            $_GET[$name] = $matches[$index];
-                        } elseif ($method === 'POST') {
-                            $_POST[$name] = $matches[$index];
-                        }
-                    }
+                if ($method === 'GET') {
+                    $_GET = array_merge($_GET, $params);
+                } elseif ($method === 'POST') {
+                    $_POST = array_merge($_POST, $params);
                 }
+
                 return require base_path('http/controllers/' . $route['controller']);
             }
         }
 
         $this->abort();
-    }
-
-    public function previousUrl() {
-        return $_SERVER['HTTP_REFERER'];
     }
 
     protected function abort($code = 404) {
