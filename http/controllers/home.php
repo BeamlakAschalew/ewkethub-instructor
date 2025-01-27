@@ -13,4 +13,5 @@ $courses = $database->query('SELECT course.name as course_name, course.descripti
     'instructor_id' => $instructor['id']
 ])->get();
 
+
 view("home/index.view.php", ['courses' => $courses, 'instructor' => $instructor]);
