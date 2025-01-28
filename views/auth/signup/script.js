@@ -96,7 +96,7 @@ function validateName() {
 }
 function validateUsername() {
   let username = $("#username").val();
-  username = formatUsernae(username);
+  username = formatUsername(username);
   $("#username").val(username);
   if (username.length === 0) {
     $(".username-error").show();
@@ -164,6 +164,6 @@ function validateBio() {
   }
 }
 
-function formatUsernae(username) {
+function formatUsername(username) {
   return username.replace(/[^a-zA-Z0-9_]/g, "");
 }

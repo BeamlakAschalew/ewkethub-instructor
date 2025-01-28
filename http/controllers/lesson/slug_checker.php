@@ -1,7 +1,5 @@
 <?php
 
-require_once base_path("Core/Database.php");
-
 use Core\Database;
 
 $courseSlug = $_GET['course-slug'];
