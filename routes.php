@@ -14,6 +14,7 @@ $router->get('/course/create', 'course/create.php')->only('auth');
 $router->post('/course/create', 'course/store.php')->only('auth');
 $router->get('/course/{course-slug}', 'course/detail.php')->only('auth');
 $router->get('/course/{course-slug}/edit', 'course/edit.php')->only('auth');
+$router->post('/course/{course-slug}/edit', 'course/update.php')->only('auth');
 
 $router->get('/course/{course-slug}/section/create', 'section/create.php')->only('auth');
 $router->post('/course/{course-slug}/section/create', 'section/store.php')->only('auth');
