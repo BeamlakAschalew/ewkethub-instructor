@@ -8,7 +8,7 @@
         </div>
         <div class="course-text">
             <div class="course-title">
-                <?= htmlspecialchars($title) ?>
+                <?= $title ?>
             </div>
 
             <div class="course-author"><?= $instructorName ?></div>

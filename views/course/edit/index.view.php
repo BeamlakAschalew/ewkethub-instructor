@@ -107,7 +107,7 @@
                     class="submit-button button"
                     type="submit"
                     value="Update" />
-                  <a href="" class="cancel-button button">Cancel</a>
+                  <a href="/course/<?= $course['course_slug'] ?>" class="cancel-button button">Cancel</a>
                 </div>
               </form>
             </div>

@@ -1,6 +1,6 @@
 <?php
 
-$data = $_POST;
+$data = sanitise_form($_POST);
 
 use Core\Database;
 
