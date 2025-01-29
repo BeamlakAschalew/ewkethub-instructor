@@ -7,7 +7,7 @@ use Core\Database;
 
 $errors = [];
 $targetDir = "../../ewkethub_shared_assets/images/instructors/profile_images/";
-$data = $_POST;
+$data = sanitise_form($_POST);
 $config = require base_path("essentials/config.php");
 $database = new Database($config["database"]);
 

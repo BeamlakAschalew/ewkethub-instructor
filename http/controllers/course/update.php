@@ -6,7 +6,7 @@ $targetDir = "../../ewkethub_shared_assets/images/course_thumbnails/";
 $config = require base_path("essentials/config.php");
 $database = new Database($config["database"]);
 
-$data = $_POST;
+$data = sanitise_form($_POST);
 
 
 if (!is_dir($targetDir)) {
