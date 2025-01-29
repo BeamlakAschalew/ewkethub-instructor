@@ -3,7 +3,7 @@
 
 <head>
   <?php require(base_path('views/partials/head.php')) ?>
-  <title>Course Details</title>
+  <title>Edit course: <?= $course['course_name'] ?></title>
   <link rel="stylesheet" href="<?= base_url('views/course/edit/styles.css') ?>" />
 </head>
 
@@ -16,12 +16,12 @@
           <div class="field-image">
             <div class="field-with-text">
               <h2 class="top-text">
-                Edit course: The Complete 2024 Web Development Bootcamp
+                Edit course: <?= $course['course_name'] ?>
               </h2>
               <div class="fields">
                 <div class="field-title first-entry">Course thumbnail</div>
                 <img
-                  src="../../assets/images/c5.webp"
+                  src="<?= base_url("ewkethub_shared_assets/images/course_thumbnails/{$course['course_thumbnail']}") ?>"
                   class="course-image second-entry"
                   alt=""
                   srcset="" />
@@ -30,35 +30,41 @@
                   type="text"
                   class="form-input second-entry"
                   name=""
+                  value="<?= $course['course_name'] ?>"
                   id="" />
-                <div class="field-title first-entry">Course slang</div>
+                <div class="field-title first-entry">Course slug</div>
                 <input
                   type="text"
                   class="form-input second-entry"
                   name=""
+                  value="<?= $course['course_slug'] ?>"
                   id="" />
                 <div class="field-title first-entry">Course description</div>
                 <textarea
                   class="form-input second-entry"
                   name=""
-                  id=""></textarea>
+                  id=""><?= $course['course_description'] ?></textarea>
                 <div class="field-title first-entry">Course category</div>
                 <select
                   class="form-input second-entry"
                   name="category"
                   id="dropdown-menu">
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
+                  <?php foreach ($categories as $category) : ?>
+                    <option value="<?= $category['id'] ?>" <?= $category['name'] == $course['course_category'] ? 'selected' : '' ?>>
+                      <?= $category['name'] ?>
+                    </option>
+                  <?php endforeach; ?>
                 </select>
                 <div class="field-title first-entry">Course difficulty</div>
                 <select
                   class="form-input second-entry"
                   name="difficulty"
                   id="dropdown-menu">
-                  <option value="option1">Beginner</option>
-                  <option value="option2">Intermediate</option>
-                  <option value="option3">Advanced</option>
+                  <?php foreach ($difficulties as $difficulty): ?>
+                    <option value="<?= $difficulty['id'] ?>" <?= $difficulty['name'] == $course['difficulty'] ? 'selected' : '' ?>>
+                      <?= $difficulty['name'] ?>
+                    </option>
+                  <?php endforeach; ?>
                 </select>
               </div>
               <div class="action-buttons">

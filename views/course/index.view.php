@@ -40,7 +40,7 @@
                                 <h2><?= $course['price'] ?></h2>
                             </div>
                             <div class="action-buttons">
-                                <a href="/course/course-slang/edit" class="submit-button button">Edit</a>
+                                <a href="/course/<?= $course['course_slug'] ?>/edit" class="submit-button button">Edit</a>
                             </div>
                         </div>
                         <aside>
