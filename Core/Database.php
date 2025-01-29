@@ -34,6 +34,11 @@ class Database {
         return $this;
     }
 
+    public function update($query, $params = []) {
+        $this->statement = $this->connection->prepare($query);
+        return $this->statement->execute($params);
+    }
+
     public function get() {
         return $this->statement->fetchAll();
     }
