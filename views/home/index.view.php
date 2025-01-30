@@ -16,7 +16,7 @@
       </div>
       <a class="create-button" href="/course/create"><i class="icon bi bi-plus-circle"></i> Create a course</a>
     </div>
-    <h3>Total students: 1,457</h3>
+    <h3>Total students: <?= $totalStudents ?></h3>
     <h3>Your courses:</h3>
     <div class="courses-list">
 
