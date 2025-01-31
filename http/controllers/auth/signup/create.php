@@ -70,4 +70,8 @@ $instructorFind = $database->query(
 
 setcookie("instructor", json_encode($instructorFind), time() + (432000 * 30), "/");
 
-header("Location: /home");
+Core\Session::set('message', [
+    'type' => 'success',
+    'content' => 'Instructor account created successfully.'
+]);
+redirect('/home');
