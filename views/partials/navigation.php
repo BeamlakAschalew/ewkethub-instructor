@@ -1,3 +1,6 @@
+<?php if (isset($_SESSION['custom_session']['message'])): ?>
+    <div class="message-widget <?= $_SESSION['custom_session']['message']['type'] ?>-widget"><?= $_SESSION['custom_session']['message']['content'] ?></div>
+<?php endif ?>
 <nav class="navbar-container">
     <div class="menu-wrapper">
         <div class="menu">
