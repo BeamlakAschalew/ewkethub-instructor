@@ -30,4 +30,5 @@ if ($instructor) {
 }
 
 setcookie("instructor", json_encode($instructor), time() + (432000 * 30), "/");
-header("Location: /home");
+
+redirect('/home');
