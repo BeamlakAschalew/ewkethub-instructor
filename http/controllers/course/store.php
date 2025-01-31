@@ -49,8 +49,11 @@ $result = $database->query('INSERT INTO course (name, course_slug, description, 
 ]);
 
 if ($database->statement->rowCount() > 0) {
-    header("Location: /home");
-    exit();
+    Core\Session::set('message', [
+        'type' => 'success',
+        'content' => 'Course created successfully.'
+    ]);
+    redirect('/home');
 } else {
     echo "Error inserting data into the database.";
 }
