@@ -60,9 +60,11 @@ $result = $database->update('UPDATE course SET name = :name, course_slug = :cour
 ]);
 
 if ($result) {
-    header("Location: /course/{$data['slug']}");
-    exit();
+    redirect("/course/{$data['slug']}");
 } else {
-    abort(['error' => "Error updating data in the database."], 500);
-    exit();
+    Core\Session::set('message', [
+        'type' => 'error',
+        'content' => 'Error updating course.'
+    ]);
+    redirect("/course/{$data['slug']}");
 }
