@@ -26,8 +26,11 @@ if (!$course) {
     ]);
 
     if ($database->statement->rowCount() > 0) {
-        header("Location: /course/{$data['course-slug']}");
-        exit();
+        Core\Session::set('message', [
+            'type' => 'success',
+            'content' => 'Section created successfully.'
+        ]);
+        redirect("/course/{$data['course-slug']}");
     } else {
         echo "Error inserting data into the database.";
     }
