@@ -8,6 +8,28 @@ body {
   min-width: 230px;
 }
 
+.message-widget {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.error-widget {
+  background-color: #ff4343;
+  color: white;
+}
+
+.success-widget {
+  background-color: #3c763d;
+  color: white;
+}
+
+.warning-widget {
+  background-color: #ff9f00;
+  color: white;
+}
+
 .navbar-container {
   margin-bottom: 20px;
   display: flex;
