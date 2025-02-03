@@ -1,11 +1,15 @@
 <?php
 
-if (isset($_SESSION['instructor'])) {
-    unset($_SESSION['instructor']);
-}
+try {
+    if (isset($_SESSION['instructor'])) {
+        unset($_SESSION['instructor']);
+    }
 
-if (isset($_COOKIE['instructor'])) {
-    setcookie('instructor', '', time() - 3600, '/');
-}
+    if (isset($_COOKIE['instructor'])) {
+        setcookie('instructor', '', time() - 3600, '/');
+    }
 
-redirect('/');
+    redirect('/');
+} catch (Exception $e) {
+    abort(['error' => $e->getMessage()], 500);
+}

@@ -13,7 +13,7 @@ $course = $database->query('SELECT instructor_id FROM course WHERE course_slug =
 ])->find();
 
 if (!$course) {
-    abort([], 404);
+    abort();
 } else if (!owns($course['instructor_id'])) {
     abort([], 403);
 }
