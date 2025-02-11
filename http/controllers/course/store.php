@@ -3,7 +3,6 @@
 use Core\Database;
 
 try {
-
     $targetDir = "../../ewkethub_shared_assets/images/course_thumbnails/";
     $config = require base_path("essentials/config.php");
     $database = new Database($config["database"]);
@@ -57,7 +56,11 @@ try {
         ]);
         redirect('/home');
     } else {
-        echo "Error inserting data into the database.";
+        Core\Session::set('message', [
+            'type' => 'error',
+            'content' => 'Failed to create course.'
+        ]);
+        redirect('/home');
     }
 } catch (Exception $e) {
     abort(['error' => $e->getMessage()], 500);

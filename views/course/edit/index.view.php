@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <?php require(base_path('views/partials/navigation.php')) ?>
+  require(base_path('views/partials/navigation.php')) ?>
   <main class="wrapper">
     <div class="inside-wrapper">
       <div class="course-editor">
@@ -19,7 +19,7 @@
                 <h2 class="top-text">
                   Edit course: <?= $course['course_name'] ?>
                 </h2>
-
+                <div class="slug-container" data-url-slug="<?= $courseSlug ?>"></div>
                 <div class="fields">
                   <div class="field-title first-entry">Course thumbnail</div>
                   <div class="second-entry">
@@ -52,7 +52,7 @@
                   <div class="field-title first-entry">Course slug</div>
 
                   <div class="form-error">
-                    <div class="slug-holder" style="display: none;" data-existing-slug="<?= $course['course_slug'] ?>"></div>
+                    <div class="course-slug-holder" style="display: none;" data-existing-slug="<?= $course['course_slug'] ?>"></div>
                     <input
                       type="text"
                       class="form-input second-entry"

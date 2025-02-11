@@ -20,7 +20,7 @@ try {
         'course_id' => $course['id']
     ])->find();
 
-    $lessons = $database->query('SELECT lesson.name as lesson_name, lesson.lesson_slug as lesson_slug, lesson.description as lesson_description, lesson.section_id as section_id FROM lesson WHERE section_id = :section_id', [
+    $lessons = $database->query('SELECT lesson.name as lesson_name, lesson.lesson_slug as lesson_slug, lesson.description as lesson_description, lesson.section_id as section_id FROM lesson WHERE section_id = :section_id ORDER BY created_at', [
         'section_id' => $section['section_id']
     ])->get();
 

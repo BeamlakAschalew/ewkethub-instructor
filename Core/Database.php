@@ -39,6 +39,12 @@ class Database {
         return $this->statement->execute($params);
     }
 
+    public function delete($query, $params = []) {
+        $this->statement = $this->connection->prepare($query);
+        $this->statement->execute($params);
+        return $this;
+    }
+
     public function get() {
         return $this->statement->fetchAll();
     }

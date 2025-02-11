@@ -19,7 +19,7 @@ try {
         abort([], 403);
     }
 
-    $sections = $database->query('SELECT * FROM section WHERE course_id = :course_id', [
+    $sections = $database->query('SELECT * FROM section WHERE course_id = :course_id ORDER BY created_at', [
         'course_id' => $course['id']
     ])->get();
 
