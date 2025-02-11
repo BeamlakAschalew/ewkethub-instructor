@@ -3,8 +3,8 @@
 
 <head>
     <?php require(base_path('views/partials/head.php')) ?>
-    <link rel="stylesheet" href="<?= base_url('views/section/create/styles.css') ?>">
-    <title>Create section</title>
+    <link rel="stylesheet" href="<?= base_url('views/section/edit/styles.css') ?>">
+    <title>Edit section</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
                         <div class="field-with-text">
                             <form action="#" method="post">
                                 <h2 class="top-text">
-                                    Create section:
+                                    Edit section:
                                 </h2>
                                 <div class="slug-container" data-url-slug="<?= $courseSlug ?>"></div>
                                 <div class="fields">
@@ -25,7 +25,7 @@
 
                                     <div class="form-error">
                                         <input
-                                            type="text"
+                                            type="text" value="<?= $section['section_name'] ?>"
                                             class="form-input second-entry"
                                             name="title"
                                             id="title" />
@@ -33,8 +33,10 @@
                                     </div>
                                     <div class="field-title first-entry">Section slug</div>
                                     <div class="form-error">
+                                        <div class="slug-holder" style="display: none;" data-existing-slug="<?= $section['section_slug'] ?>"></div>
                                         <input
                                             type="text"
+                                            value="<?= $section['section_slug'] ?>"
                                             class="form-input second-entry"
                                             name="slug"
                                             id="slug" />
@@ -46,7 +48,7 @@
                                         <textarea
                                             class="form-input second-entry"
                                             name="description"
-                                            id="description"></textarea>
+                                            id="description"><?= $section['section_description'] ?></textarea>
                                         <div class="description-error error"></div>
                                     </div>
                                 </div>
@@ -54,7 +56,7 @@
                                     <input
                                         class="submit-button button"
                                         type="submit"
-                                        value="Create" />
+                                        value="Update" />
                                     <a href="" class="cancel-button button">Cancel</a>
                                 </div>
                             </form>
@@ -72,7 +74,7 @@
     </main>
     <?php require(base_path(('views/partials/footer.php'))) ?>
     <script src="<?= base_url('views/script.js') ?>"></script>
-    <script src="<?= base_url('views/section/create/script.js') ?>"></script>
+    <script src="<?= base_url('views/section/edit/script.js') ?>"></script>
 </body>
 
 </html>

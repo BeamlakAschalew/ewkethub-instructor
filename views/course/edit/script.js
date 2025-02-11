@@ -111,6 +111,7 @@ function validateSlug() {
   if (slug.length === 0) {
     $(".slug-error").show();
     $(".slug-error").text("URL slug cannot be empty");
+    $(".slug-display").hide();
     courseSlugError = true;
     return;
   } else if (slug.length < 5 || slug.length > 30) {
@@ -118,6 +119,7 @@ function validateSlug() {
     $(".slug-error").text(
       "Length of URL slug must be between 5 and 30 characters"
     );
+    $(".slug-display").hide();
     courseSlugError = true;
     return;
   } else {

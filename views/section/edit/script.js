@@ -11,7 +11,10 @@ $(document).ready(function () {
     validateSubmit();
     if (!courseTitleError && !courseSlugError && !courseDescriptionError) {
       const courseSlug = $(".slug-container").data("url-slug");
-      form.attr("action", `/course/${courseSlug}/section/create`);
+      form.attr(
+        "action",
+        `/course/${courseSlug}/section/${$("#slug").val()}/edit`
+      );
       form.off("submit").submit();
     }
   });
@@ -59,9 +62,12 @@ function validateSlug() {
   slug = convertToSlug(slug);
   $("#slug").val(slug);
 
+  const courseSlug = $(".slug-container").data("url-slug");
+
   if (slug.length === 0) {
     $(".slug-error").show();
     $(".slug-error").text("URL slug cannot be empty");
+    $(".slug-display").hide();
     courseSlugError = true;
     return;
   } else if (slug.length < 5 || slug.length > 30) {
@@ -69,14 +75,19 @@ function validateSlug() {
     $(".slug-error").text(
       "Length of URL slug must be between 5 and 30 characters"
     );
+    $(".slug-display").hide();
     courseSlugError = true;
     return;
   } else {
     courseSlugError = false;
     $(".slug-error").hide();
+    if (slug === $(".slug-holder").data("existing-slug")) {
+      $(".slug-display").text(
+        `The course URL will be https://ewkethub.beamlak.dev/course/${courseSlug}/section/${slug} (stays the same)`
+      );
+      return;
+    }
   }
-
-  const courseSlug = $(".slug-container").data("url-slug");
 
   $.ajax({
     url: `/section-slug-checker/${courseSlug}/${slug}`,

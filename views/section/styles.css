@@ -26,11 +26,13 @@ a {
 
 .lesson-container {
   padding: 30px;
+  margin-top: 55px;
   padding-top: 0;
 }
 
 .lessons-container {
   display: grid;
+
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
@@ -87,6 +89,38 @@ div.span-container {
   font-size: 24px;
   font-weight: 500;
   grid-column: 1 / -1;
+}
+
+.button {
+  margin: 10px 30px;
+  padding: 5px 15px;
+}
+
+.submit-button {
+  all: unset;
+  margin: 10px 30px;
+  background-color: #00b3ff;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-button {
+  all: unset;
+  background-color: #ff2121;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px 0px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 577px) {

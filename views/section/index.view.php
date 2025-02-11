@@ -26,7 +26,17 @@
                 <h3 class="span-title">Description:</h3>
                 <p class="span-value"><?= $section['section_description'] ?></p>
             </div>
+
+
         </div>
+
+        <div class="buttons-container">
+            <a href="/course/<?= $courseSlug ?>/section/<?= $sectionSlug ?>/edit" class="submit-button button">Edit section</a>
+            <form method="POST" action="/course/<?= $courseSlug ?>/section/<?= $sectionSlug ?>/delete">
+                <button type="submit" class="delete-button button">Delete section</button>
+            </form>
+        </div>
+
         <div class="lesson-container">
             <h2>Lessons</h2>
             <div class="lessons-container">
