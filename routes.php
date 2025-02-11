@@ -19,6 +19,9 @@ $router->post('/course/{course-slug}/edit', 'course/update.php')->only('auth');
 $router->get('/course/{course-slug}/section/create', 'section/create.php')->only('auth');
 $router->post('/course/{course-slug}/section/create', 'section/store.php')->only('auth');
 $router->get('/course/{course-slug}/section/{section-slug}', 'section/index.php')->only('auth');
+$router->get('/course/{course-slug}/section/{section-slug}/edit', 'section/edit.php')->only('auth');
+$router->post('/course/{course-slug}/section/{section-slug}/edit', 'section/update.php')->only('auth');
+$router->post('/course/{course-slug}/section/{section-slug}/delete', 'section/delete.php')->only('auth');
 
 $router->get('/course/{course-slug}/section/{section-slug}/lesson/create', 'lesson/create.php')->only('auth');
 $router->post('/course/{course-slug}/section/{section-slug}/lesson/create', 'lesson/store.php')->only('auth');
