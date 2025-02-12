@@ -14,8 +14,8 @@ try {
     $database = new Database($config["database"]);
 
     $instructor = $database->query("SELECT * FROM instructor WHERE email = :email OR username = :username", [
-        'email' => $_POST['email'],
-        'username' => $_POST['username'],
+        'email' => $data['email'],
+        'username' => $data['username'],
     ])->find();
 
     if ($instructor) {
@@ -61,7 +61,7 @@ try {
             'profile_picture_path' => $fileName,
             'bio' => $data['bio']
         ]
-    )->find();
+    );
 
     $instructorId = $database->connection->lastInsertId();
 
