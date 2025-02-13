@@ -50,7 +50,7 @@ function validatePassword() {
   if (password.length === 0) {
     $(".password-error").show();
     $(".password-error").text("Password cannot be empty");
-    repeatPasswordError = true;
+    passwordError = true;
   } else {
     $(".password-error").hide();
     passwordError = false;
