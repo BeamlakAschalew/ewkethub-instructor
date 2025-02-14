@@ -84,7 +84,9 @@ function validateSlug() {
     dataType: "json",
     success: function (data) {
       if (!data.available) {
-        $(".slug-error").text("This slug is already taken by another course");
+        $(".slug-error").text(
+          "This slug is already taken by this course try another"
+        );
         $(".slug-error").show();
         $(".slug-display").hide();
         courseSlugError = true;

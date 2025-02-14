@@ -1,0 +1,11 @@
+- Login and Signup with client-side and server-side validation with profile picture upload
+- Logout and session management with cookies
+- Restrict CRUD operations for non-logged-in instructors by redirecting them to the login screen
+- Meaningful URL endpoints with one controller for each endpoint
+- Create a course with a unique URL slug and course thumbnail, including AJAX course slug uniqueness checking
+- Edit or delete a course
+- Create a section that belongs to a course
+- Edit or delete a section
+- Create a lesson that belongs to a specific section
+- Real-time video uploading with upload progress using jQuery AJAX
+- Authorization for all CRUD operations
